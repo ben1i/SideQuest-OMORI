@@ -258,3 +258,4 @@ $RECYCLE.BIN/
 ### Custom ###
 dist/
 
+src/assets/data/exemple.json

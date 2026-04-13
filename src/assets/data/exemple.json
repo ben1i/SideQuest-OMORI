@@ -4,7 +4,7 @@
             "pathtoimage": "./assets/images/map/",
             "size": [
                 [0, 0],
-                ["size"]
+                ["map.y", "map.x"]
             ],
             "section": {
                 "sectionName": "sectionName",
@@ -12,7 +12,7 @@
             },
             "exits": [
                 {
-                    "coordinates": ["coordinates"],
+                    "coordinates": ["(map.y) - y", "(map.x) - x"],
                     "exitTo": "mapName"
                 }
             ],
@@ -20,7 +20,10 @@
                 {
                     "interactonName": "interactonName",
                     "questName": "questName",
-                    "coordinates": "coordinates",
+                    "coordinates": [
+                        ["(map.y) - y", "(map.x) - x"],
+                        ["y - 40", "x - 40"]
+                    ],
                     "step": 1
                 }
             ]
