@@ -1,0 +1,41 @@
+{
+    "maps": {
+        "mapname": {
+            "pathtoimage": "./assets/images/map/",
+            "size": [
+                [0, 0],
+                ["size"]
+            ],
+            "section": {
+                "sectionName": "sectionName",
+                "firstMap": true
+            },
+            "exits": [
+                {
+                    "coordinates": ["coordinates"],
+                    "exitTo": "mapName"
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "interactonName",
+                    "questName": "questName",
+                    "coordinates": "coordinates",
+                    "step": 1
+                }
+            ]
+        }
+    },
+
+    "quests": [
+        {
+            "questName": "questName",
+            "steps": [
+                {
+                    "mapName": "Current section",
+                    "goTo": "Next section to go to"
+                }
+            ]
+        }
+    ]
+}

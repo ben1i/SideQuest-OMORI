@@ -1,0 +1,33 @@
+{
+    "maps": {
+        "ghostparty": {
+            "pathtoimage": "./assets/images/map/1.png",
+            "size": [
+                [0, 0],
+                [1152, 928]
+            ],
+            "section": {
+                "sectionName": "Deep Well",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [807, 423],
+                    "exitTo": "lastresort"
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "First Ghost",
+                    "questName": "Ghost Party",
+                    "interactionimage": "./assets/images/interaction/tophat-ghost.webp",
+                    "coordinates": [
+                        [342, 516],
+                        [302, 476]
+                    ],
+                    "step": 1
+                }
+            ]
+        }
+    }
+}

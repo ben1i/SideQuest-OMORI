@@ -1,2 +1,34 @@
 @import 'utils/variables';
 @import 'components/type';
+
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html, body, main {
+    height: 100%;
+    width: 100vw;
+}
+
+body {
+    background-color: #6C0EFF;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../assets/images/border_default.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.sq__map {
+    width: 1150px;
+    height: 870px;
+    background-color: black !important;
+}
