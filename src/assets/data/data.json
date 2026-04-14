@@ -1,19 +1,22 @@
 {
     "maps": {
         "ghostparty": {
+            "name": "ghostparty",
             "pathtoimage": "./assets/images/map/1.png",
+            "available in": ["Two Days Left"],
             "size": [
                 [0, 0],
                 [1152, 928]
             ],
             "section": {
-                "sectionName": "Deep Well",
+                "sectionName": "Last Resort",
                 "firstMap": false
             },
             "exits": [
                 {
                     "coordinates": [807, 423],
-                    "exitTo": "lastresort"
+                    "exitTo": "lastresort",
+                    "setView": [1895, 925]
                 }
             ],
             "interactions": [
@@ -26,6 +29,35 @@
                         [302, 476]
                     ],
                     "step": 1
+                }
+            ]
+        },
+
+        "lastresort": {
+            "name": "lastresort",
+            "pathtoimage": "./assets/images/map/2.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [2368, 1088]
+            ],
+            "section": {
+                "sectionName": "Last Resort",
+                "firstMap": true
+            },
+            "exits": [
+                {
+                    "coordinates": [1973, 530],
+                    "exitTo": "lastresort-hall"
+                },
+                {
+                    "coordinates": [325, 16],
+                    "exitTo": "underwaterhighway"
+                },
+                {
+                    "coordinates": [1895, 925],
+                    "exitTo": "ghostparty",
+                    "setView": [807, 423]
                 }
             ]
         }

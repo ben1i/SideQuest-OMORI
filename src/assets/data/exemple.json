@@ -1,7 +1,9 @@
 {
     "maps": {
         "mapname": {
+            "name": "mapname",
             "pathtoimage": "./assets/images/map/",
+            "available in": ["chapters"],
             "size": [
                 [0, 0],
                 ["map.y", "map.x"]
@@ -13,7 +15,8 @@
             "exits": [
                 {
                     "coordinates": ["(map.y) - y", "(map.x) - x"],
-                    "exitTo": "mapName"
+                    "exitTo": "mapName",
+                    "setView": ["exitMap.y, exitMap.x - exit.x"]
                 }
             ],
             "interactions": [

@@ -14,7 +14,13 @@ var handIcon = L.icon({
     iconAnchor: [22, 94]
 })
 
+var lastMap;
+
 /*
+map.on('mousemove', function (e) {
+    console.log(e.latlng);
+});
+
 map.on('mousemove', function (e) {
     console.log(e.latlng);
 });
@@ -42,20 +48,105 @@ var daisy = L.imageOverlay('./assets/images/daisy.png', [[550, 165], [595, 210]]
 }).addTo(map);
 */
 
+/*
 fetch('./assets/data/data.json')
     .then(function(data) {
         return data.json();
     })
     .then(function(data) {
-        var bounds = data.maps.ghostparty.size;
-        var image = L.imageOverlay("" + data.maps.ghostparty.pathtoimage + "", bounds).addTo(map);
+
+        var maps  = data.maps;
+        
+        var currentMap = maps.ghostparty;
+        
+        var exits = currentMap.exits;
+
+        var bounds = currentMap.size;
+        var image = L.imageOverlay("" + currentMap.pathtoimage + "", bounds).addTo(map);
         
         map.setView([(bounds[1][0]) / 2, (bounds[1][1] / 2)], 1);
         map.setMaxBounds(bounds);
 
-        var interaction = L.imageOverlay("" + data.maps.ghostparty.interactions[0].interactionimage + "", data.maps.ghostparty.interactions[0].coordinates, {
+        var interaction = L.imageOverlay("" + currentMap.interactions[0].interactionimage + "", currentMap.interactions[0].coordinates, {
             interactive: true
         }).addTo(map);
 
-        var marker = L.marker(data.maps.ghostparty.exits[0].coordinates, {icon: handIcon}).addTo(map);
+        var marker = L.marker(exits[0].coordinates, {icon: handIcon}).addTo(map);
+        marker.on('click', function() {
+
+            var lastMap = currentMap;
+            console.log(lastMap.exits[0].setView)
+            currentMap = maps[exits[0].exitTo];
+
+            bounds = currentMap.size;
+            var image = L.imageOverlay("" + currentMap.pathtoimage + "", bounds).addTo(map);
+            map.setMaxBounds(bounds);
+            map.setView(lastMap.exits[0].setView, 1);
+
+            marker.remove();
+        });
     })
+*/
+
+fetch('./assets/data/data.json')
+    .then(function(data) {
+        return data.json();
+    })
+    .then(function(data) {
+        var maps = data.maps;
+
+        var currentMapElements = L.layerGroup().addTo(map);
+
+        function loadMap(mapName, targetView) {
+            var currentMap = maps[mapName];
+            console.log(currentMap);
+            var bounds = currentMap.size;
+
+            currentMapElements.clearLayers();
+
+            var bgImage = L.imageOverlay(currentMap.pathtoimage, bounds, { zIndex: 1 });
+            currentMapElements.addLayer(bgImage);
+            
+            map.setMaxBounds(bounds);
+
+            if (targetView) {
+                map.setView(targetView, 1);
+            } else {
+                map.setView([(bounds[1][0]) / 2, (bounds[1][1] / 2)], 1);
+            }
+
+            if (currentMap.interactions) {
+                currentMap.interactions.forEach(function(interactionData) {
+                    var interaction = L.imageOverlay(interactionData.interactionimage, interactionData.coordinates, {
+                        interactive: true,
+                        zIndex: 2
+                    });
+                    
+                    //Interaction
+                    interaction.on('click', function() {
+                        console.log("Interaction cliquée :", interactionData.interactonName);
+                    });
+
+                    currentMapElements.addLayer(interaction);
+                });
+            }
+
+            if (currentMap.exits) {
+                currentMap.exits.forEach(function(exitData) {
+                    var marker = L.marker(exitData.coordinates, {icon: handIcon});
+                    
+                    marker.on('click', function() {
+                        loadMap(exitData.exitTo, exitData.setView);
+                    });
+
+                    currentMapElements.addLayer(marker);
+                });
+            }
+        }
+
+        loadMap('ghostparty');
+
+    })
+    .catch(function(error) {
+        console.error("Erreur critique lors du chargement :", error);
+    });
