@@ -142,6 +142,8 @@ fetch('./assets/data/data.json')
                     currentMapElements.addLayer(marker);
                 });
             }
+
+            console.log(currentMapElements)
         }
 
         loadMap('ghostparty');

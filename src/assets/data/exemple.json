@@ -14,9 +14,9 @@
             },
             "exits": [
                 {
-                    "coordinates": ["(map.y) - y", "(map.x) - x"],
+                    "coordinates": ["(map.y) - y", "x"],
                     "exitTo": "mapName",
-                    "setView": ["exitMap.y, exitMap.x - exit.x"]
+                    "setView": ["exitMap.y, exitMap.x"]
                 }
             ],
             "interactions": [
@@ -24,7 +24,7 @@
                     "interactonName": "interactonName",
                     "questName": "questName",
                     "coordinates": [
-                        ["(map.y) - y", "(map.x) - x"],
+                        ["(map.y) - y", "x"],
                         ["y - 40", "x - 40"]
                     ],
                     "step": 1

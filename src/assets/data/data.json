@@ -48,16 +48,169 @@
             "exits": [
                 {
                     "coordinates": [1973, 530],
-                    "exitTo": "lastresort-hall"
+                    "exitTo": "lastresort-hall",
+                    "setView": [91, 878]
                 },
                 {
                     "coordinates": [325, 16],
-                    "exitTo": "underwaterhighway"
+                    "exitTo": "underwaterhighway",
+                    "setView": [324, 3016]
                 },
                 {
                     "coordinates": [1895, 925],
                     "exitTo": "ghostparty",
                     "setView": [807, 423]
+                }
+            ]
+        },
+
+        "lastresort-hall": {
+            "name": "lastresort-hall",
+            "pathtoimage": "./assets/images/map/3.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [1664, 1760]
+            ],
+            "section": {
+                "sectionName": "Last Resort",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [117, 880],
+                    "exitTo": "lastresort",
+                    "setView": [1956, 560]
+                },
+                {
+                    "coordinates": [1496, 978],
+                    "exitTo": "lastresort-elevator-top",
+                    "setView": [512, 512]
+                },
+                {
+                    "coordinates": [1496, 782],
+                    "exitTo": "lastresort-elevator-top",
+                    "setView": [512, 512]
+                }
+            ]
+        },
+
+        "lastresort-elevator-top": {
+            "name": "lastresort-elevator-top",
+            "pathtoimage": "./assets/images/map/4.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [1024, 1024]
+            ],
+            "section": {
+                "sectionName": "Last Resort",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [511, 495],
+                    "exitTo": "lastresort-fourthfloor",
+                    "setView": [205, 890]
+                }
+            ]
+        },
+
+        "lastresort-fourthfloor": {
+            "name": "lastresort-fourthfloor",
+            "pathtoimage": "./assets/images/map/5.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [410, 1074]
+            ],
+            "section": {
+                "sectionName": "Last Resort",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [245, 205],
+                    "exitTo": "lastresort-fourthfloor-room",
+                    "setView": [1956, 560]
+                },
+                {
+                    "coordinates": [240, 845],
+                    "exitTo": "lastresort-elevator-bottom",
+                    "setView": [512, 512]
+                },
+                {
+                    "coordinates": [240, 941],
+                    "exitTo": "lastresort-elevator-bottom",
+                    "setView": [512, 512]
+                }
+            ]
+        },
+
+        "lastresort-fourthfloor-room": {
+            "name": "lastresort-fourthfloor-room",
+            "pathtoimage": "./assets/images/map/6.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [285, 285]
+            ],
+            "section": {
+                "sectionName": "Last Resort",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [37, 142],
+                    "exitTo": "lastresort-fourthfloor",
+                    "setView": [245, 205]
+                }
+            ]
+        },
+
+        "lastresort-elevator-bottom": {
+            "name": "lastresort-elevator-bottom",
+            "pathtoimage": "./assets/images/map/4.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [1024, 1024]
+            ],
+            "section": {
+                "sectionName": "Last Resort",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [511, 495],
+                    "exitTo": "lastresort-hall",
+                    "setView": [1420, 875]
+                }
+            ]
+        },
+
+        "underwaterhighway": {
+            "name": "underwaterhighway",
+            "pathtoimage": "./assets/images/map/7.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [960, 3072]
+            ],
+            "section": {
+                "sectionName": "Underwater Highway",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [327, 1324],
+                    "exitTo": "lastresort",
+                    "setView": [91, 878]
+                },
+                {
+                    "coordinates": [419, 270],
+                    "exitTo": "deepwell",
+                    "setView": [1420, 875]
                 }
             ]
         }

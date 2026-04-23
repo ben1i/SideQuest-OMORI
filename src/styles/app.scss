@@ -21,13 +21,13 @@ main {
     justify-content: center;
     align-items: center;
 
-    background-image: url(../assets/images/border_default.png);
+    background-image: url(../assets/images/border_default.png) !important;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.sq__map {
+.sq__map, #map {
     width: 1150px;
     height: 870px;
     background-image: url(../assets/images/backgroundimage.png) !important;
