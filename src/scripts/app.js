@@ -146,7 +146,7 @@ fetch('./assets/data/data.json')
             console.log(currentMapElements)
         }
 
-        loadMap('ghostparty');
+        loadMap('stumpentrance');
 
     })
     .catch(function(error) {

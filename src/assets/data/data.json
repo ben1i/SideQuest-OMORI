@@ -60,6 +60,11 @@
                     "coordinates": [1895, 925],
                     "exitTo": "ghostparty",
                     "setView": [807, 423]
+                },
+                {
+                    "coordinates": [505, 237],
+                    "exitTo": "deepwell",
+                    "setView": [325, 752]
                 }
             ]
         },
@@ -248,7 +253,7 @@
                 {
                     "coordinates": [540, 368],
                     "exitTo": "deepwell-ladder",
-                    "setView": [1420, 875]
+                    "setView": [155, 269]
                 },
                 {
                     "coordinates": [325, 9],
@@ -279,6 +284,146 @@
                 {
                     "coordinates": [570, 5034],
                     "exitTo": "pluto"
+                }
+            ]
+        },
+
+        "deepwell-ladder": {
+            "name": "deepwell-ladder",
+            "pathtoimage": "./assets/images/map/deepwell-ladder.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [4000, 672]
+            ],
+            "section": {
+                "sectionName": "Underwater Highway",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [155, 269],
+                    "exitTo": "deepwell",
+                    "setView": [540, 368]
+                },
+                {
+                    "coordinates": [3966, 333],
+                    "exitTo": "deepwell-entrance",
+                    "setView": [507, 529]
+                }
+            ]
+        },
+
+        "deepwell-entrance": {
+            "name": "deepwell-entrance",
+            "pathtoimage": "./assets/images/map/deepwell-entrance.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 960]
+            ],
+            "section": {
+                "sectionName": "Underwater Highway",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [507, 529],
+                    "exitTo": "deepwell-ladder",
+                    "setView": [3966, 333]
+                },
+                {
+                    "coordinates": [8, 495],
+                    "exitTo": "northlake",
+                    "setView": [630, 516]
+                }
+            ]
+        },
+
+        "northlake": {
+            "name": "northlake",
+            "pathtoimage": "./assets/images/map/northlake.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 960]
+            ],
+            "section": {
+                "sectionName": "Underwater Highway",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [630, 516],
+                    "exitTo": "deepwell-entrance",
+                    "setView": [8, 495]
+                },
+                {
+                    "coordinates": [15, 516],
+                    "exitTo": "vastforest-northcoast",
+                    "setView": [1804, 305]
+                }
+            ]
+        },
+
+        "vastforest-northcoast": {
+            "name": "vastforest-northcoast",
+            "pathtoimage": "./assets/images/map/vastforest-northcoast.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [1824, 640]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [1804, 305],
+                    "exitTo": "northlake",
+                    "setView": [15, 516]
+                },
+                {
+                    "coordinates": [24, 321],
+                    "exitTo": "stumpentrance",
+                    "setView": [937, 338]
+                }
+            ]
+        },
+
+        "stumpentrance": {
+            "name": "stumpentrance",
+            "pathtoimage": "./assets/images/map/stumpentrance.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [960, 672]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": true
+            },
+            "exits": [
+                {
+                    "coordinates": [937, 338],
+                    "exitTo": "vastforest-northcoast",
+                    "setView": [24, 321]
+                },
+                {
+                    "coordinates": [485, 20],
+                    "exitTo": "pyreflyforest-entrance",
+                    "setView": [8, 495]
+                },
+                {
+                    "coordinates": [39, 338],
+                    "exitTo": "playground",
+                    "setView": [15, 516]
+                },
+                {
+                    "coordinates": [448, 639],
+                    "exitTo": "otherworld-entrance",
+                    "setView": [8, 495]
                 }
             ]
         }
