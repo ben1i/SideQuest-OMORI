@@ -146,7 +146,7 @@ fetch('./assets/data/data.json')
             console.log(currentMapElements)
         }
 
-        loadMap('stumpentrance');
+        loadMap('sweetheart-underground');
 
     })
     .catch(function(error) {

@@ -369,7 +369,7 @@
         "vastforest-northcoast": {
             "name": "vastforest-northcoast",
             "pathtoimage": "./assets/images/map/vastforest-northcoast.png",
-            "available in": ["Two Days Left"],
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
             "size": [
                 [0, 0],
                 [1824, 640]
@@ -395,7 +395,7 @@
         "stumpentrance": {
             "name": "stumpentrance",
             "pathtoimage": "./assets/images/map/stumpentrance.png",
-            "available in": ["Two Days Left"],
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
             "size": [
                 [0, 0],
                 [960, 672]
@@ -413,7 +413,7 @@
                 {
                     "coordinates": [485, 20],
                     "exitTo": "pyreflyforest-entrance",
-                    "setView": [8, 495]
+                    "setView": [449, 1768]
                 },
                 {
                     "coordinates": [39, 338],
@@ -424,6 +424,296 @@
                     "coordinates": [448, 639],
                     "exitTo": "otherworld-entrance",
                     "setView": [8, 495]
+                }
+            ]
+        },
+
+        "pyreflyforest-entrance": {
+            "name": "pyreflyforest-entrance",
+            "pathtoimage": "./assets/images/map/pyreflyforest-entrance.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 1792]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [619, 387],
+                    "exitTo": "pyreflyforest-1",
+                    "setView": [39, 1251]
+                },
+                {
+                    "coordinates": [449, 1768],
+                    "exitTo": "stumpentrance",
+                    "setView": [485, 20]
+                }
+            ]
+        },
+
+        "pyreflyforest-1": {
+            "name": "pyreflyforest-1",
+            "pathtoimage": "./assets/images/map/pyreflyforest-1.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [896, 1600]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [39, 1251],
+                    "exitTo": "pyreflyforest-entrance",
+                    "setView": [619, 387]
+                },
+                {
+                    "coordinates": [864, 1200],
+                    "exitTo": "pyreflyforest-2",
+                    "setView": [22, 304]
+                }
+            ]
+        },
+
+        "pyreflyforest-2": {
+            "name": "pyreflyforest-2",
+            "pathtoimage": "./assets/images/map/pyreflyforest-2.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 960]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [22, 304],
+                    "exitTo": "pyreflyforest-1",
+                    "setView": [864, 1200]
+                },
+                {
+                    "coordinates": [623, 847],
+                    "exitTo": "pyreflyforest-3",
+                    "setView": [18, 624]
+                }
+            ]
+        },
+
+        "pyreflyforest-3": {
+            "name": "pyreflyforest-3",
+            "pathtoimage": "./assets/images/map/pyreflyforest-3.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 736]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [18, 624],
+                    "exitTo": "pyreflyforest-2",
+                    "setView": [623, 847]
+                },
+                {
+                    "coordinates": [433, 12],
+                    "exitTo": "pyreflyforest-4",
+                    "setView": [434, 782]
+                }
+            ]
+        },
+
+        "pyreflyforest-4": {
+            "name": "pyreflyforest-4",
+            "pathtoimage": "./assets/images/map/pyreflyforest-4.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 800]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [434, 782],
+                    "exitTo": "pyreflyforest-3",
+                    "setView": [433, 12]
+                },
+                {
+                    "coordinates": [624, 176],
+                    "exitTo": "pyreflyforest-5",
+                    "setView": [22, 176]
+                }
+            ]
+        },
+
+        "pyreflyforest-5": {
+            "name": "pyreflyforest-5",
+            "pathtoimage": "./assets/images/map/pyreflyforest-5.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 1088]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [22, 176],
+                    "exitTo": "pyreflyforest-4",
+                    "setView": [624, 176]
+                },
+                {
+                    "coordinates": [624, 686],
+                    "exitTo": "pyrefly-to-sweetheart",
+                    "setView": [33, 653]
+                }
+            ]
+        },
+
+        "pyrefly-to-sweetheart": {
+            "name": "pyrefly-to-sweetheart",
+            "pathtoimage": "./assets/images/map/pyrefly-to-sweetheart.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1920, 1312]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [33, 653],
+                    "exitTo": "pyreflyforest-5",
+                    "setView": [624, 686]
+                },
+                {
+                    "coordinates": [1446, 653],
+                    "exitTo": "pyrefly-to-mole",
+                    "setView": [31, 401]
+                }
+            ]
+        },
+
+        "pyrefly-to-mole": {
+            "name": "pyrefly-to-mole",
+            "pathtoimage": "./assets/images/map/10.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [2144, 1760]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": true
+            },
+            "exits": [
+                {
+                    "coordinates": [31, 401],
+                    "exitTo": "pyrefly-to-sweetheart",
+                    "setView": [1446, 653]
+                },
+                {
+                    "coordinates": [1921, 1137],
+                    "exitTo": "sproutmole-village",
+                    "setView": [759, 463]
+                },
+                {
+                    "coordinates": [463, 1140],
+                    "exitTo": "pluto"
+                }
+            ]
+        },
+
+        "sproutmole-village": {
+            "name": "sproutmole-village",
+            "pathtoimage": "./assets/images/map/11.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [960, 1056]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [759, 463],
+                    "exitTo": "pyrefly-to-mole",
+                    "setView": [1921, 1137]
+                },
+                {
+                    "coordinates": [600, 207],
+                    "exitTo": "sweetheart-stage",
+                    "setView": [58, 457]
+                }
+            ]
+        },
+
+        "sweetheart-stage": {
+            "name": "sweetheart-stage",
+            "pathtoimage": "./assets/images/map/12.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1088, 922]
+            ],
+            "section": {
+                "sectionName": "Sweetheart's Castle",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [58, 457],
+                    "exitTo": "sproutmole-village",
+                    "setView": [600, 207]
+                },
+                {
+                    "coordinates": [164, 233],
+                    "exitTo": "sweetheart-underground",
+                    "setView": [619, 387]
+                }
+            ]
+        },
+
+        "sweetheart-underground": {
+            "name": "sweetheart-underground",
+            "pathtoimage": "./assets/images/map/13.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1600, 1632]
+            ],
+            "section": {
+                "sectionName": "Sweetheart's Castle",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [58, 457],
+                    "exitTo": "sproutmole-village",
+                    "setView": [600, 207]
+                },
+                {
+                    "coordinates": [164, 233],
+                    "exitTo": "sweetheart-underground",
+                    "setView": [619, 387]
                 }
             ]
         }
