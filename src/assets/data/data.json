@@ -418,7 +418,7 @@
                 {
                     "coordinates": [39, 338],
                     "exitTo": "playground",
-                    "setView": [15, 516]
+                    "setView": [1201, 704]
                 },
                 {
                     "coordinates": [448, 639],
@@ -687,7 +687,7 @@
                 {
                     "coordinates": [164, 233],
                     "exitTo": "sweetheart-underground",
-                    "setView": [619, 387]
+                    "setView": [199, 816]
                 }
             ]
         },
@@ -706,14 +706,378 @@
             },
             "exits": [
                 {
-                    "coordinates": [58, 457],
-                    "exitTo": "sproutmole-village",
-                    "setView": [600, 207]
+                    "coordinates": [199, 816],
+                    "exitTo": "sweetheart-stage",
+                    "setView": [164, 233]
                 },
                 {
-                    "coordinates": [164, 233],
+                    "coordinates": [1516, 816],
+                    "exitTo": "sweetheart-garden",
+                    "setView": [770, 817]
+                }
+            ]
+        },
+
+        "sweetheart-garden": {
+            "name": "sweetheart-garden",
+            "pathtoimage": "./assets/images/map/14.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1920, 1632]
+            ],
+            "section": {
+                "sectionName": "Sweetheart's Castle",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [770, 817],
                     "exitTo": "sweetheart-underground",
-                    "setView": [619, 387]
+                    "setView": [1516, 816]
+                },
+                {
+                    "coordinates": [1700, 817],
+                    "exitTo": "sweetheart-castle",
+                    "setView": [70, 1195]
+                }
+            ]
+        },
+
+        "sweetheart-castle": {
+            "name": "sweetheart-castle",
+            "pathtoimage": "./assets/images/map/15.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1600, 2400]
+            ],
+            "section": {
+                "sectionName": "Sweetheart's Castle",
+                "firstMap": true
+            },
+            "exits": [
+                {
+                    "coordinates": [70, 1195],
+                    "exitTo": "sweetheart-garden",
+                    "setView": [1700, 817]
+                },
+                {
+                    "coordinates": [647, 28],
+                    "exitTo": "sweetheart-lefthall",
+                    "setView": [742, 1833]
+                }
+            ]
+        },
+
+        "sweetheart-lefthall": {
+            "name": "sweetheart-lefthall",
+            "pathtoimage": "./assets/images/map/16.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1120, 1920]
+            ],
+            "section": {
+                "sectionName": "Sweetheart's Castle",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [742, 1833],
+                    "exitTo": "sweetheart-castle",
+                    "setView": [647, 28]
+                },
+                {
+                    "coordinates": [858, 1008],
+                    "exitTo": "sweetheart-artgallery",
+                    "setView": [50, 590]
+                }
+            ]
+        },
+
+        "sweetheart-artgallery": {
+            "name": "sweetheart-artgallery",
+            "pathtoimage": "./assets/images/map/17.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1344, 1184]
+            ],
+            "section": {
+                "sectionName": "Sweetheart's Castle",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [50, 590],
+                    "exitTo": "sweetheart-lefthall",
+                    "setView": [858, 1008]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Princess Ghost",
+                    "questName": "Ghost Party",
+                    "interactionimage": "./assets/images/interaction/princess-ghost.webp",
+                    "coordinates": [
+                        [616, 572],
+                        [656, 612]
+                    ],
+                    "step": 3
+                }
+            ]
+        },
+
+        "playground": {
+            "name": "playground",
+            "pathtoimage": "./assets/images/map/playground.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1472, 1344]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [1201, 704],
+                    "exitTo": "stumpentrance",
+                    "setView": [39, 338]
+                },
+                {
+                    "coordinates": [32, 748],
+                    "exitTo": "path-to-basil",
+                    "setView": [2528, 812]
+                }
+            ]
+        },
+
+        "path-to-basil": {
+            "name": "path-to-basil",
+            "pathtoimage": "./assets/images/map/28.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [2560, 1600]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [2528, 812],
+                    "exitTo": "playground",
+                    "setView": [32, 748]
+                },
+                {
+                    "coordinates": [2345, 25],
+                    "exitTo": "vastforest-left",
+                    "setView": [502, 2747]
+                },
+                {
+                    "coordinates": [2261, 1556],
+                    "exitTo": "vastforest-right",
+                    "setView": [50, 590]
+                },
+                {
+                    "coordinates": [2348, 1266],
+                    "exitTo": "pluto",
+                    "setView": [50, 590]
+                }
+            ]
+        },
+
+        "vastforest-left": {
+            "name": "vastforest-left",
+            "pathtoimage": "./assets/images/map/vastforest-left.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1856, 2784]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [502, 2747],
+                    "exitTo": "path-to-basil",
+                    "setView": [2345, 25]
+                },
+                {
+                    "coordinates": [1430, 574],
+                    "exitTo": "trainstation-wait",
+                    "setView": [35, 447]
+                }
+            ]
+        },
+
+        "trainstation-wait": {
+            "name": "trainstation-wait",
+            "pathtoimage": "./assets/images/map/trainstation-wait.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1728, 928]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [35, 447],
+                    "exitTo": "vastforest-left",
+                    "setView": [1430, 574]
+                },
+                {
+                    "coordinates": [1346, 447],
+                    "exitTo": "trainstation-vastforest",
+                    "setView": [26, 464]
+                }
+            ]
+        },
+
+        "trainstation-vastforest": {
+            "name": "trainstation-vastforest",
+            "pathtoimage": "./assets/images/map/trainstation-vastforest.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [896, 896]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [26, 464],
+                    "exitTo": "trainstation-wait",
+                    "setView": [1346, 447]
+                },
+                {
+                    "coordinates": [541, 625],
+                    "exitTo": "train-to-oasis"
+                }
+            ]
+        },
+
+        "train-to-oasis": {
+            "name": "train-to-oasis",
+            "pathtoimage": "./assets/images/map/train.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [672, 1472]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [356, 369],
+                    "exitTo": "trainstation-orangeoasis",
+                    "setView": [384, 592]
+                },
+                {
+                    "coordinates": [356, 1104],
+                    "exitTo": "trainstation-orangeoasis",
+                    "setView": [384, 592]
+                }
+            ]
+        },
+
+        "trainstation-orangeoasis": {
+            "name": "trainstation-orangeoasis",
+            "pathtoimage": "./assets/images/map/trainstation-orangeoasis.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [768, 896]
+            ],
+            "section": {
+                "sectionName": "Orange Oasis",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [384, 592],
+                    "exitTo": "train-to-forest"
+                },
+                {
+                    "coordinates": [760, 206],
+                    "exitTo": "orangeoasis",
+                    "setView": [46, 563]
+                }
+            ]
+        },
+
+        "orangeoasis": {
+            "name": "orangeoasis",
+            "pathtoimage": "./assets/images/map/18.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [2880, 2880]
+            ],
+            "section": {
+                "sectionName": "Orange Oasis",
+                "firstMap": true
+            },
+            "exits": [
+                {
+                    "coordinates": [46, 563],
+                    "exitTo": "trainstation-orangeoasis",
+                    "setView": [760, 206]
+                },
+                {
+                    "coordinates": [1338, 271],
+                    "exitTo": "pluto"
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Beard Ghost",
+                    "questName": "Ghost Party",
+                    "interactionimage": "./assets/images/interaction/beard-ghost.webp",
+                    "coordinates": [
+                        [1964, 2747],
+                        [2004, 2787]
+                    ],
+                    "step": 4
+                }
+            ]
+        },
+        
+        "train-to-forest": {
+            "name": "train-to-forest",
+            "pathtoimage": "./assets/images/map/train.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [672, 1472]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [356, 369],
+                    "exitTo": "trainstation-vastforest",
+                    "setView": [384, 592]
+                },
+                {
+                    "coordinates": [356, 1104],
+                    "exitTo": "trainstation-vastforest",
+                    "setView": [384, 592]
                 }
             ]
         }

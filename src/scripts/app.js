@@ -146,7 +146,7 @@ fetch('./assets/data/data.json')
             console.log(currentMapElements)
         }
 
-        loadMap('sweetheart-underground');
+        loadMap('trainstation-wait');
 
     })
     .catch(function(error) {
