@@ -146,7 +146,7 @@ fetch('./assets/data/data.json')
             console.log(currentMapElements)
         }
 
-        loadMap('trainstation-wait');
+        loadMap('vastforest-left');
 
     })
     .catch(function(error) {

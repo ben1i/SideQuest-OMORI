@@ -423,7 +423,7 @@
                 {
                     "coordinates": [448, 639],
                     "exitTo": "otherworld-entrance",
-                    "setView": [8, 495]
+                    "setView": [366, 29]
                 }
             ]
         },
@@ -852,6 +852,28 @@
                     "exitTo": "path-to-basil",
                     "setView": [2528, 812]
                 }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Berly",
+                    "questName": "Berly's Lost Ball",
+                    "interactionimage": "./assets/images/interaction/berly.webp",
+                    "coordinates": [
+                        [803, 701],
+                        [833, 731]
+                    ],
+                    "step": 1
+                },
+                {
+                    "interactonName": "Van",
+                    "questName": "Berly's Lost Ball",
+                    "interactionimage": "./assets/images/interaction/van.webp",
+                    "coordinates": [
+                        [771, 752],
+                        [831, 812]
+                    ],
+                    "step": 1
+                }
             ]
         },
 
@@ -881,7 +903,7 @@
                 {
                     "coordinates": [2261, 1556],
                     "exitTo": "vastforest-right",
-                    "setView": [50, 590]
+                    "setView": [341, 39]
                 },
                 {
                     "coordinates": [2348, 1266],
@@ -913,6 +935,18 @@
                     "coordinates": [1430, 574],
                     "exitTo": "trainstation-wait",
                     "setView": [35, 447]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Lost Ball",
+                    "questName": "Berly's Lost Ball",
+                    "interactionimage": "./assets/images/interaction/lostball.webp",
+                    "coordinates": [
+                        [348, 406],
+                        [388, 446]
+                    ],
+                    "step": 2
                 }
             ]
         },
@@ -1078,6 +1112,426 @@
                     "coordinates": [356, 1104],
                     "exitTo": "trainstation-vastforest",
                     "setView": [384, 592]
+                }
+            ]
+        },
+
+        "otherworld-entrance": {
+            "name": "otherworld-entrance",
+            "pathtoimage": "./assets/images/map/otherworld-entrance.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1600, 1600]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [366, 29],
+                    "exitTo": "stumpentrance",
+                    "setView": [448, 639]
+                },
+                {
+                    "coordinates": [1546, 1040],
+                    "exitTo": "otherworld-ladder",
+                    "setView": [60, 464]
+                }
+            ]
+        },
+
+        "otherworld-ladder": {
+            "name": "otherworld-ladder",
+            "pathtoimage": "./assets/images/map/otherworld-ladder.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [3808, 928]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [60, 464],
+                    "exitTo": "otherworld-entrance",
+                    "setView": [1546, 1040]
+                },
+                {
+                    "coordinates": [3781, 464],
+                    "exitTo": "otherworld-sprout",
+                    "setView": [33, 815]
+                }
+            ]
+        },
+
+        "otherworld-sprout": {
+            "name": "otherworld-sprout",
+            "pathtoimage": "./assets/images/map/otherworld-sprout.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [2560, 1600]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [33, 815],
+                    "exitTo": "otherworld-ladder",
+                    "setView": [3781, 464]
+                },
+                {
+                    "coordinates": [2220, 815],
+                    "exitTo": "otherworld-field",
+                    "setView": [318, 401]
+                }
+            ]
+        },
+
+        "otherworld-field": {
+            "name": "otherworld-field",
+            "pathtoimage": "./assets/images/map/otherworld-field.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [640, 768]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [318, 401],
+                    "exitTo": "otherworld-sprout",
+                    "setView": [2220, 815]
+                },
+                {
+                    "coordinates": [627, 433],
+                    "exitTo": "otherworld",
+                    "setView": [37, 557]
+                }
+            ]
+        },
+
+        "otherworld": {
+            "name": "otherworld",
+            "pathtoimage": "./assets/images/map/19.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [2304, 1088]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": true
+            },
+            "exits": [
+                {
+                    "coordinates": [37, 557],
+                    "exitTo": "otherworld-field",
+                    "setView": [627, 433]
+                },
+                {
+                    "coordinates": [1274, 1058],
+                    "exitTo": "otherworld-to-junkyard",
+                    "setView": [634, 28]
+                },
+                {
+                    "coordinates": [833, 174],
+                    "exitTo": "pluto"
+                }
+            ]
+        },
+
+        "otherworld-to-junkyard": {
+            "name": "otherworld-to-junkyard",
+            "pathtoimage": "./assets/images/map/20.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1408, 2048]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [634, 28],
+                    "exitTo": "otherworld",
+                    "setView": [1274, 1058]
+                },
+                {
+                    "coordinates": [1368, 632],
+                    "exitTo": "junkyard-entrance",
+                    "setView": [25, 764]
+                },
+                {
+                    "coordinates": [638, 2013],
+                    "exitTo": "otherworld-lake",
+                    "setView": [867, 28]
+                }
+            ]
+        },
+
+        "otherworld-lake": {
+            "name": "otherworld-lake",
+            "pathtoimage": "./assets/images/map/21.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1536, 1312]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [867, 28],
+                    "exitTo": "otherworld-to-junkyard",
+                    "setView": [638, 2013]
+                },
+                {
+                    "coordinates": [31, 158],
+                    "exitTo": "otherworld-to-frozenlake",
+                    "setView": [564, 191]
+                }
+            ]
+        },
+
+        "otherworld-to-frozenlake": {
+            "name": "otherworld-to-frozenlake",
+            "pathtoimage": "./assets/images/map/22.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [576, 672]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [564, 191],
+                    "exitTo": "otherworld-lake",
+                    "setView": [31, 158]
+                },
+                {
+                    "coordinates": [239, 659],
+                    "exitTo": "frozenlake",
+                    "setView": [429, 19]
+                }
+            ]
+        },
+
+        "frozenlake": {
+            "name": "frozenlake",
+            "pathtoimage": "./assets/images/map/23.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1024, 1056]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [429, 19],
+                    "exitTo": "otherworld-to-frozenlake",
+                    "setView": [239, 659]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Sunhat Ghost",
+                    "questName": "Ghost Party",
+                    "interactionimage": "./assets/images/interaction/sunhat-ghost.webp",
+                    "coordinates": [
+                        [768, 467],
+                        [808, 507]
+                    ],
+                    "step": 5
+                }
+            ]
+        },
+
+        "junkyard-entrance": {
+            "name": "junkyard-entrance",
+            "pathtoimage": "./assets/images/map/24.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1312, 1312]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [25, 764],
+                    "exitTo": "otherworld-to-junkyard",
+                    "setView": [1368, 632]
+                },
+                {
+                    "coordinates": [1275, 751],
+                    "exitTo": "junkyard",
+                    "setView": [25, 470]
+                }
+            ]
+        },
+
+        "junkyard": {
+            "name": "junkyard",
+            "pathtoimage": "./assets/images/map/25.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [960, 928]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [25, 470],
+                    "exitTo": "junkyard-entrance",
+                    "setView": [1275, 751]
+                },
+                {
+                    "coordinates": [675, 908],
+                    "exitTo": "junkyard-right",
+                    "setView": [418, 24]
+                }
+            ]
+        },
+
+        "junkyard-right": {
+            "name": "junkyard-right",
+            "pathtoimage": "./assets/images/map/26.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [960, 1376]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [418, 24],
+                    "exitTo": "junkyard",
+                    "setView": [675, 908]
+                },
+                {
+                    "coordinates": [553, 1351],
+                    "exitTo": "junkyard-puzzle",
+                    "setView": [131, 26]
+                }
+            ]
+        },
+
+        "junkyard-puzzle": {
+            "name": "junkyard-puzzle",
+            "pathtoimage": "./assets/images/map/27.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1344, 1280]
+            ],
+            "section": {
+                "sectionName": "Otherworld",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [131, 26],
+                    "exitTo": "junkyard-right",
+                    "setView": [553, 1351]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Glasses Ghost",
+                    "questName": "Ghost Party",
+                    "interactionimage": "./assets/images/interaction/glasses-ghost.webp",
+                    "coordinates": [
+                        [645, 860],
+                        [685, 900]
+                    ],
+                    "step": 6
+                }
+            ]
+        },
+
+        "vastforest-right": {
+            "name": "vastforest-right",
+            "pathtoimage": "./assets/images/map/29.png",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1600, 2784]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [341, 39],
+                    "exitTo": "path-to-basil",
+                    "setView": [2261, 1556]
+                },
+                {
+                    "coordinates": [1550, 2477],
+                    "exitTo": "pinwheelforest",
+                    "setView": [52, 399]
+                }
+            ]
+        },
+
+        "pinwheelforest": {
+            "name": "pinwheelforest",
+            "pathtoimage": "./assets/images/map/30.webp",
+            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [2560, 864]
+            ],
+            "section": {
+                "sectionName": "Vast Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [52, 399],
+                    "exitTo": "vastforest-right",
+                    "setView": [1550, 2477]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Propeller Ghost",
+                    "questName": "Ghost Party",
+                    "interactionimage": "./assets/images/interaction/propeller-ghost.webp",
+                    "coordinates": [
+                        [1824, 704],
+                        [1864, 744]
+                    ],
+                    "step": 7
                 }
             ]
         }
