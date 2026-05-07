@@ -282,8 +282,45 @@
                     "setView": [325, 9]
                 },
                 {
+                    "coordinates": [761, 4620],
+                    "exitTo": "constructionsite",
+                    "setView": [37, 686]
+                },
+                {
                     "coordinates": [570, 5034],
                     "exitTo": "pluto"
+                }
+            ]
+        },
+        "constructionsite": {
+            "name": "constructionsite",
+            "pathtoimage": "./assets/images/map/constructionsite.png",
+            "available in": ["Two Days Left"],
+            "size": [
+                [0, 0],
+                [1216, 1600]
+            ],
+            "section": {
+                "sectionName": "Last Resort",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [37, 686],
+                    "exitTo": "underwaterhighway-left",
+                    "setView": [761, 4620]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Joke Sign",
+                    "questName": "Weeping Willow",
+                    "interactionimage": "./assets/images/interaction/jokesign.png",
+                    "coordinates": [
+                        [1054, 542],
+                        [1096, 572]
+                    ],
+                    "step": 2
                 }
             ]
         },
@@ -477,6 +514,18 @@
                     "exitTo": "pyreflyforest-2",
                     "setView": [22, 304]
                 }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Weeping Willow",
+                    "questName": "Weeping Willow",
+                    "interactionimage": "./assets/images/interaction/weeping-willow.webp",
+                    "coordinates": [
+                        [476, 380],
+                        [516, 420]
+                    ],
+                    "step": 1
+                }
             ]
         },
 
@@ -662,6 +711,152 @@
                     "coordinates": [600, 207],
                     "exitTo": "sweetheart-stage",
                     "setView": [58, 457]
+                },
+                {
+                    "coordinates": [25, 751],
+                    "exitTo": "sproutmole-village-2",
+                    "setView": [869, 911]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Pessi",
+                    "questName": "Pessi's Thing",
+                    "interactionimage": "./assets/images/interaction/pessi.webp",
+                    "coordinates": [
+                        [510, 219],
+                        [546, 251]
+                    ],
+                    "step": 1
+                },
+                {
+                    "interactonName": "Shady Mole",
+                    "questName": "Pessi's Thing",
+                    "interactionimage": "./assets/images/interaction/shady-mole.webp",
+                    "coordinates": [
+                        [160, 790],
+                        [200, 830]
+                    ],
+                    "step": 2
+                }
+            ]
+        },
+
+        "sproutmole-village-2": {
+            "name": "sproutmole-village-2",
+            "pathtoimage": "./assets/images/map/sproutmole-village-2.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [896, 1440]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [869, 911],
+                    "exitTo": "sproutmole-village",
+                    "setView": [25, 751]
+                },
+                {
+                    "coordinates": [31, 624],
+                    "exitTo": "sproutmole-village-3",
+                    "setView": [1380, 815]
+                },
+                {
+                    "coordinates": [31, 1199],
+                    "exitTo": "sproutmole-village-4",
+                    "setView": [1005, 559]
+                }
+            ],
+            "interactions": [
+            ]
+        },
+
+        "sproutmole-village-3": {
+            "name": "sproutmole-village-3",
+            "pathtoimage": "./assets/images/map/sproutmole-village-3.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1408, 1216]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [1380, 815],
+                    "exitTo": "sproutmole-village-2",
+                    "setView": [31, 624]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Sport Mole",
+                    "questName": "Pessi's Thing",
+                    "interactionimage": "./assets/images/interaction/sport-mole.webp",
+                    "coordinates": [
+                        [1085, 1055],
+                        [1125, 1095]
+                    ],
+                    "step": 4
+                },
+                {
+                    "interactonName": "Sleepy Mole",
+                    "questName": "Pessi's Thing",
+                    "interactionimage": "./assets/images/interaction/sleepy-mole.webp",
+                    "coordinates": [
+                        [638, 1089],
+                        [678, 1129]
+                    ],
+                    "step": 5
+                },
+                {
+                    "interactonName": "Rosa",
+                    "questName": "Pessi's Thing",
+                    "interactionimage": "./assets/images/interaction/rosa.webp",
+                    "coordinates": [
+                        [700, 402],
+                        [740, 442]
+                    ],
+                    "step": 6
+                }
+            ]
+        },
+
+        "sproutmole-village-4": {
+            "name": "sproutmole-village-4",
+            "pathtoimage": "./assets/images/map/sproutmole-village-4.png",
+            "available in": ["Three Days Left", "Two Days Left"],
+            "size": [
+                [0, 0],
+                [1024, 896]
+            ],
+            "section": {
+                "sectionName": "Pyrefly Forest",
+                "firstMap": false
+            },
+            "exits": [
+                {
+                    "coordinates": [1005, 559],
+                    "exitTo": "sproutmole-village-2",
+                    "setView": [31, 1199]
+                }
+            ],
+            "interactions": [
+                {
+                    "interactonName": "Mayor Mole",
+                    "questName": "Pessi's Thing",
+                    "interactionimage": "./assets/images/interaction/mayor-mole.webp",
+                    "coordinates": [
+                        [765, 695],
+                        [805, 735]
+                    ],
+                    "step": 3
                 }
             ]
         },

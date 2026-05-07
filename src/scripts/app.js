@@ -146,7 +146,7 @@ fetch('./assets/data/data.json')
             console.log(currentMapElements)
         }
 
-        loadMap('vastforest-left');
+        loadMap('underwaterhighway-left');
 
     })
     .catch(function(error) {
