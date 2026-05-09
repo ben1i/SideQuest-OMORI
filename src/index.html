@@ -27,10 +27,38 @@
 <body>
 
   <main class="sq__main">
+    <section class="sq__spawn hidden">
+      <h1>Choose your current location on the map:</h1>
+      <div class="sq__choices">
+        <form method="post" class="sq__day">
+          <h2>Select Chapter</h2>
+          <p>Please select your current chapter in OMORI. If you don’t know how to do so, go to the nearest picnic basket to save. On top of your save, you should see “File [NUMBER]: [Your current chapter].</p>
+          <p>Please note that the ONE DAY LEFT chapter is not available because no side quests can be completed in this chapter</p>
+
+          <input type="radio" name="day" id="prologue" value="prologue">PROLOGUE</input>
+          <input type="radio" name="day" id="threedaysleft" value="threedaysleft">ONE DAY LEFT</input>
+          <input type="radio" name="day" id="twodaysleft" value="twodaysleft">TWO DAYS LEFT</input>
+        </form>
+
+        <form method="post" class="sq__location">
+          <h2>What location are you currently in ?</h2>
+
+          <input type="radio" name="location" id="vastforest" value="Vast Forest">Vast Forest</input>
+          <input type="radio" name="location" id="otherworld" value="Otherworld">Otherworld</input>
+          <input type="radio" name="location" id="orangeoasis" value="Orange Oasis">Orange Oasis</input>
+          <input type="radio" name="location" id="pyreflyforest" value="Pyrefly Forest">Pyrefly Forest</input>
+          <input type="radio" name="location" id="sweetheartcastle" value="Sweetheart's Castle">Sweetheart's Castle</input>
+          <input type="radio" name="location" id="lastresort" value="Last Resort">Last Resort</input>
+          <input type="radio" name="location" id="underwaterhighway" value="Underwater Highway">Underwater Highway</input>
+        </form>
+      </div>
+    </section>
+
     <div class="sq__buttons">
       <div class="sq__quests"></div>
       <div class="sq__list"></div>
     </div>
+
     <div class="sq__map" id="map"></div>
   </main>
   

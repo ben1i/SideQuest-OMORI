@@ -1,5 +1,8 @@
 "use strict";
 
+import L from 'leaflet';
+import 'leaflet-rotatedmarker';
+
 var map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: 0.2,
@@ -122,10 +125,11 @@ fetch('./assets/data/data.json')
                         zIndex: 2
                     });
                     
-                    //Interaction
-                    interaction.on('click', function() {
-                        console.log("Interaction cliquée :", interactionData.interactonName);
-                    });
+                    if (mapName === "pluto") {
+                        interaction.on('click', function() {
+                            loadMap(interactionData.map, interactionData.setView);
+                        })
+                    }
 
                     currentMapElements.addLayer(interaction);
                 });
@@ -135,6 +139,16 @@ fetch('./assets/data/data.json')
                 currentMap.exits.forEach(function(exitData) {
                     var marker = L.marker(exitData.coordinates, {icon: handIcon});
                     
+                    if (exitData.rotation) {
+                        if (exitData.rotation === "left") {
+                            marker.setRotationAngle(90);
+                        } else if (exitData.rotation === "right") {
+                            marker.setRotationAngle(270);
+                        } else if (exitData.rotation === "top") {
+                            marker.setRotationAngle(180);
+                        }
+                    }
+
                     marker.on('click', function() {
                         loadMap(exitData.exitTo, exitData.setView);
                     });
@@ -146,7 +160,7 @@ fetch('./assets/data/data.json')
             console.log(currentMapElements)
         }
 
-        loadMap('underwaterhighway-left');
+        loadMap('pluto');
 
     })
     .catch(function(error) {

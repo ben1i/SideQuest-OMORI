@@ -1,7 +1,6 @@
 @import 'utils/variables';
 @import 'components/type';
 
-
 body {
     padding: 0;
     margin: 0;
@@ -31,4 +30,8 @@ main {
     width: 1150px;
     height: 870px;
     background-image: url(../assets/images/backgroundimage.png) !important;
+}
+
+.hidden {
+    display: none !important;
 }
