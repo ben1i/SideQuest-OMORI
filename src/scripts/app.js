@@ -19,6 +19,19 @@ var handIcon = L.icon({
 
 var lastMap;
 
+var spawnForms = document.querySelector('.sq__spawn');
+var dayForm = document.querySelector('.sq__day');
+var heightsForm = document.querySelector('.sq__heights');
+var plutoForm = document.querySelector('.sq__pluto');
+var sweetheartForm = document.querySelector('.sq__sweetheart');
+var orangeoasisForm = document.querySelector('.sq__orangeoasis');
+var locationForm = document.querySelector('.sq__location');
+
+var pluto = false;
+var heights = false;
+var orangeoasis = false;
+var sweetheart = false;
+
 /*
 map.on('mousemove', function (e) {
     console.log(e.latlng);
@@ -96,13 +109,162 @@ fetch('./assets/data/data.json')
         return data.json();
     })
     .then(function(data) {
+        let dayValue = "";
+        let locationValue = "";
+
+        let vastforestOption = document.querySelector('.sq__label--vastforest');
+        let otherworldOption = document.querySelector('.sq__label--otherworld');
+        let orangeoasisOption = document.querySelector('.sq__label--orangeoasis');
+        let pyreflyforestOption = document.querySelector('.sq__label--pyreflyforest');
+        let sweetheartcastleOption = document.querySelector('.sq__label--sweetheartcastle');
+        let lastresortOption = document.querySelector('.sq__label--lastresort');
+        let underwaterhighwayOption = document.querySelector('.sq__label--underwaterhighway');
+
+        const dayRadios = document.querySelectorAll('.sq__dayradio');
+        dayRadios.forEach(radio => {
+            radio.addEventListener("change", () => {
+                dayValue = radio.value;
+
+                dayForm.classList.add('hidden');
+
+                if (dayValue === "prologue") {
+                    plutoForm.classList.remove('hidden');
+
+                    orangeoasisOption.classList.add('hidden');
+                    pyreflyforestOption.classList.add('hidden');
+                    sweetheartcastleOption.classList.add('hidden');
+                    lastresortOption.classList.add('hidden');
+                    underwaterhighwayOption.classList.add('hidden');
+                } else if (dayValue === "threedaysleft") {
+                    sweetheartForm.classList.remove('hidden');
+
+                    pluto = true;
+                    heights = true;
+
+                    lastresortOption.classList.add('hidden');
+                    underwaterhighwayOption.classList.add('hidden');
+                } else if (dayValue === "twodaysleft") {
+                    orangeoasisForm.classList.remove('hidden');
+
+                    sweetheart = true;
+                    pluto = true;
+                    heights = true;
+                }
+            })
+        });
+
+        const plutoRadios = document.querySelectorAll('.sq__plutoradio');
+        plutoRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const plutoValue = radio.value;
+                plutoForm.classList.add("hidden");
+
+                if (plutoValue === "true") {
+                    pluto = true;
+                    heights = true;
+
+                    locationForm.classList.remove('hidden');
+                } else {
+                    pluto = false;
+
+                    heightsForm.classList.remove("hidden");
+                }
+            })
+        })
+
+        const heightsRadios = document.querySelectorAll('.sq__heightradio');
+        heightsRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const heightValue = radio.value;
+                heightsForm.classList.add("hidden");
+
+                if (heightValue === "true") {
+                    heights = true;
+                } else {
+                    heights = false;
+
+                    otherworldOption.classList.add('hidden');
+                    vastforestOption.classList.remove('hidden');
+                }
+
+                locationForm.classList.remove("hidden");
+            })
+        })
+
+        const sweetheartRadios = document.querySelectorAll('.sq__sweetheartradio');
+        sweetheartRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const sweetheartValue = radio.value;
+                sweetheartForm.classList.add("hidden");
+
+                if (sweetheartValue === "true") {
+                    sweetheart = true;
+                } else {
+                    sweetheart = false;
+                }
+
+                orangeoasisForm.classList.remove('hidden');
+            })
+        })
+
+        const orangeoasisRadios = document.querySelectorAll('.sq__orangeoasisradio');
+        orangeoasisRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const orangeoasisValue = radio.value;
+                orangeoasisForm.classList.add("hidden");
+
+                if (orangeoasisValue === "true") {
+                    orangeoasis = true;
+                } else {
+                    orangeoasis = false;
+
+                    orangeoasisOption.classList.add('hidden');
+                }
+
+                locationForm.classList.remove('hidden');
+            })
+        })
+
+        const locationRadios = document.querySelectorAll('.sq__locationradio');
+        locationRadios.forEach(radio => {
+            radio.addEventListener("change", () => {
+                locationValue = radio.value;
+
+                locationForm.classList.add('hidden');
+                spawnForms.classList.add('hidden');
+                
+                if (locationValue === "vastforest") {
+                    loadMap('stumpentrance');
+                } else if (locationValue === "otherworld") {
+                    loadMap('otherworld');
+                } else if (locationValue === "orangeoasis") {
+                    loadMap('orangeoasis');
+                } else if (locationValue === "pyreflyforest") {
+                    loadMap('pyrefly-to-mole');
+                } else if (locationValue === "sweetheartcastle") {
+                    loadMap('sweetheart-castle');
+                } else if (locationValue === "lastresort") {
+                    loadMap('lastresort');
+                } else if (locationValue === "underwaterhighway") {
+                    loadMap('deepwell');
+                }
+                
+                localStorage.setItem("day", dayValue);
+                localStorage.setItem("location", locationValue);
+                localStorage.setItem("heights", heights);
+                localStorage.setItem("pluto", pluto);
+                localStorage.setItem("sweetheart", sweetheart);
+                localStorage.setItem("orangeoasis", orangeoasis);
+            })
+        })
+
+
         var maps = data.maps;
 
         var currentMapElements = L.layerGroup().addTo(map);
 
         function loadMap(mapName, targetView) {
             var currentMap = maps[mapName];
-            console.log(currentMap);
             var bounds = currentMap.size;
 
             currentMapElements.clearLayers();
@@ -156,12 +318,7 @@ fetch('./assets/data/data.json')
                     currentMapElements.addLayer(marker);
                 });
             }
-
-            console.log(currentMapElements)
         }
-
-        loadMap('pluto');
-
     })
     .catch(function(error) {
         console.error("Erreur critique lors du chargement :", error);

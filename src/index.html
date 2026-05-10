@@ -27,29 +27,123 @@
 <body>
 
   <main class="sq__main">
-    <section class="sq__spawn hidden">
-      <h1>Choose your current location on the map:</h1>
+    <section class="sq__spawn">
+      <h1 class="omori__border">Choose your current location on the map:</h1>
       <div class="sq__choices">
         <form method="post" class="sq__day">
-          <h2>Select Chapter</h2>
-          <p>Please select your current chapter in OMORI. If you don’t know how to do so, go to the nearest picnic basket to save. On top of your save, you should see “File [NUMBER]: [Your current chapter].</p>
-          <p>Please note that the ONE DAY LEFT chapter is not available because no side quests can be completed in this chapter</p>
+          <h2 class="omori__border">Select Chapter</h2>
+          <p class="sq__alert omori__border">Please select your current chapter in OMORI. If you don’t know how to do so, go to the nearest picnic basket to save. On top of your save, you should see “File [NUMBER]: [Your current chapter].</p>
+          <p class=" sq__alert omori__border">Please note that the ONE DAY LEFT chapter is not available because no side quests can be completed in this chapter</p>
 
-          <input type="radio" name="day" id="prologue" value="prologue">PROLOGUE</input>
-          <input type="radio" name="day" id="threedaysleft" value="threedaysleft">ONE DAY LEFT</input>
-          <input type="radio" name="day" id="twodaysleft" value="twodaysleft">TWO DAYS LEFT</input>
+          <div class="sq__radios">
+            <label class="sq__label">
+              <input class="sq__dayradio" type="radio" name="day" id="prologue" value="prologue">
+              <span class="omori__border omori__border--click">PROLOGUE</span>
+            </label>
+            <label class="sq__label">
+              <input class="sq__dayradio" type="radio" name="day" id="threedaysleft" value="threedaysleft">
+              <span class="omori__border omori__border--click">THREE DAYS LEFT</span>
+            </label>
+            <label class="sq__label">
+              <input class="sq__dayradio" type="radio" name="day" id="twodaysleft" value="twodaysleft">
+              <span class="omori__border omori__border--click">TWO DAYS LEFT</span>
+            </label>
+          </div>
         </form>
 
-        <form method="post" class="sq__location">
-          <h2>What location are you currently in ?</h2>
+        <form method="post" class="sq__heights hidden">
+          <h2 class="omori__border">Have you beaten you fear of heights ?</h2>
 
-          <input type="radio" name="location" id="vastforest" value="Vast Forest">Vast Forest</input>
-          <input type="radio" name="location" id="otherworld" value="Otherworld">Otherworld</input>
-          <input type="radio" name="location" id="orangeoasis" value="Orange Oasis">Orange Oasis</input>
-          <input type="radio" name="location" id="pyreflyforest" value="Pyrefly Forest">Pyrefly Forest</input>
-          <input type="radio" name="location" id="sweetheartcastle" value="Sweetheart's Castle">Sweetheart's Castle</input>
-          <input type="radio" name="location" id="lastresort" value="Last Resort">Last Resort</input>
-          <input type="radio" name="location" id="underwaterhighway" value="Underwater Highway">Underwater Highway</input>
+          <div class="sq__radios">
+            <label class="sq__label">
+              <input class="sq__heightradio" type="radio" name="height" id="trueHeights" value="true">
+              <span class="omori__border omori__border--click">YES</span>
+            </label>
+            <label class="sq__label">
+              <input class="sq__heightradio" type="radio" name="height" id="falseHeights" value="false">
+              <span class="omori__border omori__border--click">NO</span>
+            </label>
+          </div>
+        </form>
+
+        <form method="post" class="sq__pluto hidden">
+          <h2 class="omori__border">Have you unlocked Pluto's Spaceline ?</h2>
+
+          <div class="sq__radios">
+            <label class="sq__label">
+              <input class="sq__plutoradio" type="radio" name="pluto" id="truePluto" value="true">
+              <span class="omori__border omori__border--click">YES</span>
+            </label>
+            <label class="sq__label">
+              <input class="sq__plutoradio" type="radio" name="pluto" id="falsePluto" value="false">
+              <span class="omori__border omori__border--click">NO</span>
+            </label>
+          </div>
+        </form>
+
+        <form method="post" class="sq__sweetheart hidden">
+          <h2 class="omori__border">Have you beaten Sweetheart ?</h2>
+
+          <div class="sq__radios">
+            <label class="sq__label">
+              <input class="sq__sweetheartradio" type="radio" name="sweetheart" id="trueSweetheart" value="true">
+              <span class="omori__border omori__border--click">YES</span>
+            </label>
+            <label class="sq__label">
+              <input class="sq__sweetheartradio" type="radio" name="sweetheart" id="falseSweetheart" value="false">
+              <span class="omori__border omori__border--click">NO</span>
+            </label>
+          </div>
+        </form>
+
+        <form method="post" class="sq__orangeoasis hidden">
+          <h2 class="omori__border">Have you discovered Orange Oasis ?</h2>
+
+          <div class="sq__radios">
+            <label class="sq__label">
+              <input class="sq__orangeoasisradio" type="radio" name="orangeoasis" id="trueOrangeoasis" value="true">
+              <span class="omori__border omori__border--click">YES</span>
+            </label>
+            <label class="sq__label">
+              <input class="sq__orangeoasisradio" type="radio" name="orangeoasis" id="falseOrangeoasis" value="false">
+              <span class="omori__border omori__border--click">NO</span>
+            </label>
+          </div>
+        </form>
+
+        <form method="post" class="sq__location hidden">
+          <h2 class="omori__border">What location are you currently in ?</h2>
+          
+          <div class="sq__radios">
+            <label class="sq__label sq__label--vastforest">
+              <input class="sq__locationradio" type="radio" name="location" id="vastforest" value="vastforest">
+              <span class="omori__border omori__border--click">Vast Forest</span>
+            </label>
+            <label class="sq__label sq__label--otherworld">
+              <input class="sq__locationradio" type="radio" name="location" id="otherworld" value="otherworld">
+              <span class="omori__border omori__border--click">Otherworld</span>
+            </label>
+            <label class="sq__label sq__label--orangeoasis">
+              <input class="sq__locationradio" type="radio" name="location" id="orangeoasis" value="orangeoasis">
+              <span class="omori__border omori__border--click">Orange Oasis</span>
+            </label>
+            <label class="sq__label sq__label--pyreflyforest">
+              <input class="sq__locationradio" type="radio" name="location" id="pyreflyforest" value="pyreflyforest">
+              <span class="omori__border omori__border--click">Pyrefly Forest</span>
+            </label>
+            <label class="sq__label sq__label--sweetheartcastle">
+              <input class="sq__locationradio" type="radio" name="location" id="sweetheartcastle" value="sweetheartcastle">
+              <span class="omori__border omori__border--click">Sweetheart's Castle</span>
+            </label>
+            <label class="sq__label sq__label--lastresort">
+              <input class="sq__locationradio" type="radio" name="location" id="lastresort" value="lastresort">
+              <span class="omori__border omori__border--click">Last Resort</span>
+            </label>
+            <label class="sq__label sq__label--underwaterhighway">
+              <input class="sq__locationradio" type="radio" name="location" id="underwaterhighway" value="underwaterhighway">
+              <span class="omori__border omori__border--click">Underwater Highway</span>
+            </label>
+          </div>
         </form>
       </div>
     </section>

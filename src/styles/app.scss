@@ -1,9 +1,18 @@
 @import 'utils/variables';
 @import 'components/type';
 
+@font-face {
+    font-family: omoriFont;
+    src: url(../assets/fonts/OMORI_GAME2.ttf);
+}
+
 body {
     padding: 0;
     margin: 0;
+
+    font-family: omoriFont;
+
+    overflow: hidden;
 }
 
 html, body, main {
@@ -30,6 +39,88 @@ main {
     width: 1150px;
     height: 870px;
     background-image: url(../assets/images/backgroundimage.png) !important;
+
+    z-index: 10;
+}
+
+.sq__spawn {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+
+    z-index: 20;
+
+    color: white;
+
+    top: 15%;
+}
+
+h1 {
+    font-size: 62px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 44px;
+    margin-bottom: 0;
+    margin-top: 31px;
+
+    text-align: center;
+}
+
+p {
+    font-size: 22px;
+}
+
+.sq__alert {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.sq__radios {
+    margin-top: 62px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 31px;
+
+    span {
+        font-size: 44px;
+    }
+}
+
+.omori__border {
+    background-color: black;
+    padding: 20px;
+
+    outline-offset: -8px;
+    outline-width: 5px;
+    outline-color: white;
+    outline-style: solid;
+}
+
+.omori__border--click {
+    cursor: pointer;
+}
+
+.omori__border--click:hover {
+    background-color: white;
+    padding: 20px;
+
+    outline-offset: -8px;
+    outline-width: 5px;
+    outline-color: black;
+    outline-style: solid;
+
+    color: black;
+}
+
+.sq__label input[type="radio"] {
+  display: none;
 }
 
 .hidden {
