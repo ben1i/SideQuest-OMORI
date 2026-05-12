@@ -29,8 +29,35 @@ var locationForm = document.querySelector('.sq__location');
 
 var pluto = false;
 var heights = false;
-var orangeoasis = false;
 var sweetheart = false;
+
+const heightsBlocked = [
+    "pinwheelforest",
+    "otherworld-ladder",
+    "northlake",
+    "pyreflyforest-1",
+    "trainstation-vastforest",
+    "orangeoasis"
+];
+
+const plutoBlocked = [
+    "pluto",
+    "northlake",
+    "pyreflyforest-1",
+    "trainstation-vastforest",
+    "orangeoasis"
+];
+
+const prologueBlocked = [
+    "northlake",
+    "pyreflyforest-1",
+    "trainstation-vastforest",
+    "orangeoasis"
+];
+
+const threedaysleftBlocked = [
+    "northlake"
+];
 
 /*
 map.on('mousemove', function (e) {
@@ -109,163 +136,168 @@ fetch('./assets/data/data.json')
         return data.json();
     })
     .then(function(data) {
-        let dayValue = "";
-        let locationValue = "";
 
-        let vastforestOption = document.querySelector('.sq__label--vastforest');
-        let otherworldOption = document.querySelector('.sq__label--otherworld');
-        let orangeoasisOption = document.querySelector('.sq__label--orangeoasis');
-        let pyreflyforestOption = document.querySelector('.sq__label--pyreflyforest');
-        let sweetheartcastleOption = document.querySelector('.sq__label--sweetheartcastle');
-        let lastresortOption = document.querySelector('.sq__label--lastresort');
-        let underwaterhighwayOption = document.querySelector('.sq__label--underwaterhighway');
-
-        const dayRadios = document.querySelectorAll('.sq__dayradio');
-        dayRadios.forEach(radio => {
-            radio.addEventListener("change", () => {
-                dayValue = radio.value;
-
-                dayForm.classList.add('hidden');
-
-                if (dayValue === "prologue") {
-                    plutoForm.classList.remove('hidden');
-
-                    orangeoasisOption.classList.add('hidden');
-                    pyreflyforestOption.classList.add('hidden');
-                    sweetheartcastleOption.classList.add('hidden');
-                    lastresortOption.classList.add('hidden');
-                    underwaterhighwayOption.classList.add('hidden');
-                } else if (dayValue === "threedaysleft") {
-                    sweetheartForm.classList.remove('hidden');
-
-                    pluto = true;
-                    heights = true;
-
-                    lastresortOption.classList.add('hidden');
-                    underwaterhighwayOption.classList.add('hidden');
-                } else if (dayValue === "twodaysleft") {
-                    orangeoasisForm.classList.remove('hidden');
-
-                    sweetheart = true;
-                    pluto = true;
-                    heights = true;
-                }
-            })
-        });
-
-        const plutoRadios = document.querySelectorAll('.sq__plutoradio');
-        plutoRadios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                const plutoValue = radio.value;
-                plutoForm.classList.add("hidden");
-
-                if (plutoValue === "true") {
-                    pluto = true;
-                    heights = true;
-
-                    locationForm.classList.remove('hidden');
-                } else {
-                    pluto = false;
-
-                    heightsForm.classList.remove("hidden");
-                }
-            })
-        })
-
-        const heightsRadios = document.querySelectorAll('.sq__heightradio');
-        heightsRadios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                const heightValue = radio.value;
-                heightsForm.classList.add("hidden");
-
-                if (heightValue === "true") {
-                    heights = true;
-                } else {
-                    heights = false;
-
-                    otherworldOption.classList.add('hidden');
-                    vastforestOption.classList.remove('hidden');
-                }
-
-                locationForm.classList.remove("hidden");
-            })
-        })
-
-        const sweetheartRadios = document.querySelectorAll('.sq__sweetheartradio');
-        sweetheartRadios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                const sweetheartValue = radio.value;
-                sweetheartForm.classList.add("hidden");
-
-                if (sweetheartValue === "true") {
-                    sweetheart = true;
-                } else {
-                    sweetheart = false;
-                }
-
-                orangeoasisForm.classList.remove('hidden');
-            })
-        })
-
-        const orangeoasisRadios = document.querySelectorAll('.sq__orangeoasisradio');
-        orangeoasisRadios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                const orangeoasisValue = radio.value;
-                orangeoasisForm.classList.add("hidden");
-
-                if (orangeoasisValue === "true") {
-                    orangeoasis = true;
-                } else {
-                    orangeoasis = false;
-
-                    orangeoasisOption.classList.add('hidden');
-                }
-
-                locationForm.classList.remove('hidden');
-            })
-        })
-
-        const locationRadios = document.querySelectorAll('.sq__locationradio');
-        locationRadios.forEach(radio => {
-            radio.addEventListener("change", () => {
-                locationValue = radio.value;
-
-                locationForm.classList.add('hidden');
-                spawnForms.classList.add('hidden');
-                
-                if (locationValue === "vastforest") {
-                    loadMap('stumpentrance');
-                } else if (locationValue === "otherworld") {
-                    loadMap('otherworld');
-                } else if (locationValue === "orangeoasis") {
-                    loadMap('orangeoasis');
-                } else if (locationValue === "pyreflyforest") {
-                    loadMap('pyrefly-to-mole');
-                } else if (locationValue === "sweetheartcastle") {
-                    loadMap('sweetheart-castle');
-                } else if (locationValue === "lastresort") {
-                    loadMap('lastresort');
-                } else if (locationValue === "underwaterhighway") {
-                    loadMap('deepwell');
-                }
-                
-                localStorage.setItem("day", dayValue);
-                localStorage.setItem("location", locationValue);
-                localStorage.setItem("heights", heights);
-                localStorage.setItem("pluto", pluto);
-                localStorage.setItem("sweetheart", sweetheart);
-                localStorage.setItem("orangeoasis", orangeoasis);
-            })
-        })
-
+        var currentDay = localStorage.getItem("day");
+        pluto = localStorage.getItem("pluto") === "true";
+        heights = localStorage.getItem("heights") === "true";
+        sweetheart = localStorage.getItem("sweetheart") === "true";
 
         var maps = data.maps;
-
         var currentMapElements = L.layerGroup().addTo(map);
+        
+        if (!currentDay) {
+            let locationValue = "";
+
+            let vastforestOption = document.querySelector('.sq__label--vastforest');
+            let otherworldOption = document.querySelector('.sq__label--otherworld');
+            let orangeoasisOption = document.querySelector('.sq__label--orangeoasis');
+            let pyreflyforestOption = document.querySelector('.sq__label--pyreflyforest');
+            let sweetheartcastleOption = document.querySelector('.sq__label--sweetheartcastle');
+            let lastresortOption = document.querySelector('.sq__label--lastresort');
+            let underwaterhighwayOption = document.querySelector('.sq__label--underwaterhighway');
+
+            const dayRadios = document.querySelectorAll('.sq__dayradio');
+            dayRadios.forEach(radio => {
+                radio.addEventListener("change", () => {
+                    currentDay = radio.value;
+
+                    dayForm.classList.add('hidden');
+
+                    if (currentDay === "prologue") {
+                        plutoForm.classList.remove('hidden');
+
+                        pyreflyforestOption.classList.add('hidden');
+                        sweetheartcastleOption.classList.add('hidden');
+                        lastresortOption.classList.add('hidden');
+                        underwaterhighwayOption.classList.add('hidden');
+                        orangeoasisOption.classList.add('hidden');
+                    } else if (currentDay === "threedaysleft") {
+                        sweetheartForm.classList.remove('hidden');
+
+                        pluto = true;
+                        heights = true;
+
+                        lastresortOption.classList.add('hidden');
+                        underwaterhighwayOption.classList.add('hidden');
+                    } else if (currentDay === "twodaysleft") {
+                        locationForm.classList.remove('hidden');
+
+                        sweetheart = true;
+                        pluto = true;
+                        heights = true;
+                    }
+                })
+            });
+
+            const plutoRadios = document.querySelectorAll('.sq__plutoradio');
+            plutoRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    const plutoValue = radio.value;
+                    plutoForm.classList.add("hidden");
+
+                    if (plutoValue === "true") {
+                        pluto = true;
+                        heights = true;
+
+                        locationForm.classList.remove('hidden');
+                    } else {
+                        pluto = false;
+
+                        heightsForm.classList.remove("hidden");
+                    }
+                })
+            })
+
+            const heightsRadios = document.querySelectorAll('.sq__heightradio');
+            heightsRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    const heightValue = radio.value;
+                    heightsForm.classList.add("hidden");
+
+                    if (heightValue === "true") {
+                        heights = true;
+                    } else {
+                        heights = false;
+
+                        otherworldOption.classList.add('hidden');
+                        vastforestOption.classList.remove('hidden');
+                    }
+
+                    locationForm.classList.remove("hidden");
+                })
+            })
+
+            const sweetheartRadios = document.querySelectorAll('.sq__sweetheartradio');
+            sweetheartRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    const sweetheartValue = radio.value;
+                    sweetheartForm.classList.add("hidden");
+
+                    if (sweetheartValue === "true") {
+                        sweetheart = true;
+                    } else {
+                        sweetheart = false;
+                    }
+
+                    locationForm.classList.remove('hidden');
+                })
+            })
+
+            const locationRadios = document.querySelectorAll('.sq__locationradio');
+            locationRadios.forEach(radio => {
+                radio.addEventListener("change", () => {
+                    locationValue = radio.value;
+
+                    locationForm.classList.add('hidden');
+                    spawnForms.classList.add('hidden');
+                    
+                    if (locationValue === "vastforest") {
+                        loadMap('stumpentrance');
+                    } else if (locationValue === "otherworld") {
+                        loadMap('otherworld');
+                    } else if (locationValue === "orangeoasis") {
+                        loadMap('orangeoasis');
+                    } else if (locationValue === "pyreflyforest") {
+                        loadMap('pyrefly-to-mole');
+                    } else if (locationValue === "sweetheartcastle") {
+                        loadMap('sweetheart-castle');
+                    } else if (locationValue === "lastresort") {
+                        loadMap('lastresort');
+                    } else if (locationValue === "underwaterhighway") {
+                        loadMap('deepwell');
+                    }
+                    
+                    localStorage.setItem("day", currentDay);
+
+                    if (locationValue === "vastforest") {
+                        localStorage.setItem("location", "stumpentrance");
+                    } else if (locationValue === "pyreflyforest") {
+                        localStorage.setItem("location", "pyrefly-to-mole");
+                    } else if (locationValue === "sweetheartcastle") {
+                        localStorage.setItem("location", "sweetheart-castle");
+                    } else if (locationValue === "underwaterhighway") {
+                        localStorage.setItem("location", "deepwell");
+                    } else {
+                        localStorage.setItem("location", locationValue);
+                    }
+
+                    localStorage.setItem("heights", heights);
+                    localStorage.setItem("pluto", pluto);
+                    localStorage.setItem("sweetheart", sweetheart);
+                })
+            })
+        } else {
+            let lastLocation = localStorage.getItem('location');
+            spawnForms.classList.add('hidden');
+
+            loadMap(lastLocation);
+        }
 
         function loadMap(mapName, targetView) {
             var currentMap = maps[mapName];
             var bounds = currentMap.size;
+
+            localStorage.setItem("location", mapName);
 
             currentMapElements.clearLayers();
 
@@ -282,15 +314,33 @@ fetch('./assets/data/data.json')
 
             if (currentMap.interactions) {
                 currentMap.interactions.forEach(function(interactionData) {
-                    var interaction = L.imageOverlay(interactionData.interactionimage, interactionData.coordinates, {
-                        interactive: true,
-                        zIndex: 2
-                    });
+
+                    console.log(interactionData.interactionName);
                     
+                    if (mapName === "pluto") {
+                        if (currentDay === "prologue" && (interactionData.interactionName === "orangeoasis" || interactionData.interactionName === "pyreflyforest" || interactionData.interactionName === "deepwell")) {
+                            console.log("This path is not available");
+                            return;
+                        } else if (currentDay === "threedaysleft" && interactionData.interactionName === "deepwell") {
+                            console.log("This path is not available");
+                            return;
+                        } else {
+                            var interaction = L.imageOverlay(interactionData.interactionimage, interactionData.coordinates, {
+                                interactive: true,
+                                zIndex: 2
+                            })
+                        }
+                    } else {
+                        var interaction = L.imageOverlay(interactionData.interactionimage, interactionData.coordinates, {
+                            interactive: true,
+                            zIndex: 2
+                        });
+                    }
+
                     if (mapName === "pluto") {
                         interaction.on('click', function() {
                             loadMap(interactionData.map, interactionData.setView);
-                        })
+                        });
                     }
 
                     currentMapElements.addLayer(interaction);
@@ -299,23 +349,33 @@ fetch('./assets/data/data.json')
 
             if (currentMap.exits) {
                 currentMap.exits.forEach(function(exitData) {
-                    var marker = L.marker(exitData.coordinates, {icon: handIcon});
-                    
-                    if (exitData.rotation) {
-                        if (exitData.rotation === "left") {
-                            marker.setRotationAngle(90);
-                        } else if (exitData.rotation === "right") {
-                            marker.setRotationAngle(270);
-                        } else if (exitData.rotation === "top") {
-                            marker.setRotationAngle(180);
+                    if (heights === false && heightsBlocked.includes(exitData.exitTo)) {
+                        console.log("you haven't beaten your fear of heights");
+                    } else if (pluto === false && plutoBlocked.includes(exitData.exitTo)) {
+                        console.log("You haven't unlocked Pluto's Ride");
+                    } else if (currentDay === "prologue" && prologueBlocked.includes(exitData.exitTo)) {
+                        console.log("This area is not accessible during the prologue");
+                    } else if (currentDay === "threedaysleft" && threedaysleftBlocked.includes(exitData.exitTo)) {
+                        console.log("This area is not accessible during Three Days Left");
+                    } else {
+                        var marker = L.marker(exitData.coordinates, {icon: handIcon});
+
+                        if (exitData.rotation) {
+                            if (exitData.rotation === "left") {
+                                marker.setRotationAngle(90);
+                            } else if (exitData.rotation === "right") {
+                                marker.setRotationAngle(270);
+                            } else if (exitData.rotation === "top") {
+                                marker.setRotationAngle(180);
+                            }
                         }
+
+                        marker.on('click', function() {
+                            loadMap(exitData.exitTo, exitData.setView);
+                        });
+
+                        currentMapElements.addLayer(marker);
                     }
-
-                    marker.on('click', function() {
-                        loadMap(exitData.exitTo, exitData.setView);
-                    });
-
-                    currentMapElements.addLayer(marker);
                 });
             }
         }

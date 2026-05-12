@@ -21,7 +21,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "First Ghost",
+                    "interactionName": "First Ghost",
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/tophat-ghost.webp",
                     "coordinates": [
@@ -181,7 +181,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Mustache Ghost",
+                    "interactionName": "Mustache Ghost",
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/mustache-ghost.webp",
                     "coordinates": [
@@ -278,7 +278,7 @@
         "underwaterhighway-left": {
             "name": "underwaterhighway-left",
             "pathtoimage": "./assets/images/map/9.png",
-            "available in": ["Two Days Left"],
+            "available in": "twodaysleft",
             "size": [
                 [0, 0],
                 [800, 5600]
@@ -328,7 +328,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Joke Sign",
+                    "interactionName": "Joke Sign",
                     "questName": "Weeping Willow",
                     "interactionimage": "./assets/images/interaction/jokesign.png",
                     "coordinates": [
@@ -541,7 +541,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Weeping Willow",
+                    "interactionName": "Weeping Willow",
                     "questName": "Weeping Willow",
                     "interactionimage": "./assets/images/interaction/weeping-willow.webp",
                     "coordinates": [
@@ -692,7 +692,7 @@
         "pyrefly-to-mole": {
             "name": "pyrefly-to-mole",
             "pathtoimage": "./assets/images/map/10.png",
-            "available in": ["Three Days Left", "Two Days Left"],
+            "available in": "threedaysleft",
             "size": [
                 [0, 0],
                 [2144, 1760]
@@ -736,7 +736,8 @@
                 {
                     "coordinates": [759, 463],
                     "exitTo": "pyrefly-to-mole",
-                    "setView": [1921, 1137]
+                    "setView": [1921, 1137],
+                    "rotation" : "top"
                 },
                 {
                     "coordinates": [600, 207],
@@ -751,7 +752,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Pessi",
+                    "interactionName": "Pessi",
                     "questName": "Pessi's Thing",
                     "interactionimage": "./assets/images/interaction/pessi.webp",
                     "coordinates": [
@@ -761,7 +762,7 @@
                     "step": 1
                 },
                 {
-                    "interactonName": "Shady Mole",
+                    "interactionName": "Shady Mole",
                     "questName": "Pessi's Thing",
                     "interactionimage": "./assets/images/interaction/shady-mole.webp",
                     "coordinates": [
@@ -829,7 +830,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Sport Mole",
+                    "interactionName": "Sport Mole",
                     "questName": "Pessi's Thing",
                     "interactionimage": "./assets/images/interaction/sport-mole.webp",
                     "coordinates": [
@@ -839,7 +840,7 @@
                     "step": 4
                 },
                 {
-                    "interactonName": "Sleepy Mole",
+                    "interactionName": "Sleepy Mole",
                     "questName": "Pessi's Thing",
                     "interactionimage": "./assets/images/interaction/sleepy-mole.webp",
                     "coordinates": [
@@ -849,7 +850,7 @@
                     "step": 5
                 },
                 {
-                    "interactonName": "Rosa",
+                    "interactionName": "Rosa",
                     "questName": "Pessi's Thing",
                     "interactionimage": "./assets/images/interaction/rosa.webp",
                     "coordinates": [
@@ -883,7 +884,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Mayor Mole",
+                    "interactionName": "Mayor Mole",
                     "questName": "Pessi's Thing",
                     "interactionimage": "./assets/images/interaction/mayor-mole.webp",
                     "coordinates": [
@@ -1050,7 +1051,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Princess Ghost",
+                    "interactionName": "Princess Ghost",
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/princess-ghost.webp",
                     "coordinates": [
@@ -1089,7 +1090,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Berly",
+                    "interactionName": "Berly",
                     "questName": "Berly's Lost Ball",
                     "interactionimage": "./assets/images/interaction/berly.webp",
                     "coordinates": [
@@ -1099,7 +1100,7 @@
                     "step": 1
                 },
                 {
-                    "interactonName": "Van",
+                    "interactionName": "Van",
                     "questName": "Berly's Lost Ball",
                     "interactionimage": "./assets/images/interaction/van.webp",
                     "coordinates": [
@@ -1114,7 +1115,7 @@
         "path-to-basil": {
             "name": "path-to-basil",
             "pathtoimage": "./assets/images/map/28.png",
-            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "available in": ["prologue"],
             "size": [
                 [0, 0],
                 [2560, 1600]
@@ -1178,7 +1179,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Lost Ball",
+                    "interactionName": "Lost Ball",
                     "questName": "Berly's Lost Ball",
                     "interactionimage": "./assets/images/interaction/lostball.webp",
                     "coordinates": [
@@ -1297,7 +1298,7 @@
         "orangeoasis": {
             "name": "orangeoasis",
             "pathtoimage": "./assets/images/map/18.png",
-            "available in": ["Three Days Left", "Two Days Left"],
+            "available in": "threedaysleft",
             "size": [
                 [0, 0],
                 [2880, 2880]
@@ -1320,7 +1321,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Beard Ghost",
+                    "interactionName": "Beard Ghost",
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/beard-ghost.webp",
                     "coordinates": [
@@ -1470,7 +1471,7 @@
         "otherworld": {
             "name": "otherworld",
             "pathtoimage": "./assets/images/map/19.png",
-            "available in": ["Prologue", "Three Days Left", "Two Days Left"],
+            "available in": "prologue",
             "size": [
                 [0, 0],
                 [2304, 1088]
@@ -1610,7 +1611,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Sunhat Ghost",
+                    "interactionName": "Sunhat Ghost",
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/sunhat-ghost.webp",
                     "coordinates": [
@@ -1726,7 +1727,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Glasses Ghost",
+                    "interactionName": "Glasses Ghost",
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/glasses-ghost.webp",
                     "coordinates": [
@@ -1787,7 +1788,7 @@
             ],
             "interactions": [
                 {
-                    "interactonName": "Propeller Ghost",
+                    "interactionName": "Propeller Ghost",
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/propeller-ghost.webp",
                     "coordinates": [
@@ -1814,8 +1815,9 @@
 
             "interactions": [
                 {
-                    "interactonName": "otherworld",
+                    "interactionName": "otherworld",
                     "interactionimage": "./assets/images/interaction/otherworld.svg",
+                    "requiredDay": "prologue",
                     "coordinates": [
                         [1078, 1112],
                         [1017, 1427]
@@ -1824,8 +1826,9 @@
                     "setView": [833, 174]
                 },
                 {
-                    "interactonName": "orangeoasis",
+                    "interactionName": "orangeoasis",
                     "interactionimage": "./assets/images/interaction/orangeoasis.svg",
+                    "requiredDay": "threedaysleft",
                     "coordinates": [
                         [1007, 1112],
                         [946, 1427]
@@ -1834,8 +1837,9 @@
                     "setView": [1338, 271]
                 },
                 {
-                    "interactonName": "vastforest",
+                    "interactionName": "vastforest",
                     "interactionimage": "./assets/images/interaction/vastforest.svg",
+                    "requiredDay": "prologue",
                     "coordinates": [
                         [936, 1112],
                         [875, 1427]
@@ -1844,8 +1848,9 @@
                     "setView": [2348, 1266]
                 },
                 {
-                    "interactonName": "pyreflyforest",
+                    "interactionName": "pyreflyforest",
                     "interactionimage": "./assets/images/interaction/pyreflyforest.svg",
+                    "requiredDay": "threedaysleft",
                     "coordinates": [
                         [865, 1112],
                         [804, 1427]
@@ -1854,8 +1859,9 @@
                     "setView": [463, 1140]
                 },
                 {
-                    "interactonName": "deepwell",
+                    "interactionName": "deepwell",
                     "interactionimage": "./assets/images/interaction/deepwell.svg",
+                    "requiredDay": "twodaysleft",
                     "coordinates": [
                         [794, 1112],
                         [733, 1427]
