@@ -31,6 +31,12 @@ var pluto = false;
 var heights = false;
 var sweetheart = false;
 
+var settingsDiv = document.querySelector('.sq__settings');
+var chapterSettings = document.querySelector('.sq__parameter--chapter');
+var heightsSettings = document.querySelector('.sq__parameter--heights');
+var plutoSettings = document.querySelector('.sq__parameter--pluto');
+var sweetheartSettings = document.querySelector('.sq__parameter--sweetheart');
+
 const heightsBlocked = [
     "pinwheelforest",
     "otherworld-ladder",
@@ -142,6 +148,8 @@ fetch('./assets/data/data.json')
         heights = localStorage.getItem("heights") === "true";
         sweetheart = localStorage.getItem("sweetheart") === "true";
 
+        
+
         var maps = data.maps;
         var currentMapElements = L.layerGroup().addTo(map);
         
@@ -164,6 +172,8 @@ fetch('./assets/data/data.json')
                     dayForm.classList.add('hidden');
 
                     if (currentDay === "prologue") {
+                        document.getElementById('prologueSettings').checked = true;
+
                         plutoForm.classList.remove('hidden');
 
                         pyreflyforestOption.classList.add('hidden');
@@ -171,7 +181,13 @@ fetch('./assets/data/data.json')
                         lastresortOption.classList.add('hidden');
                         underwaterhighwayOption.classList.add('hidden');
                         orangeoasisOption.classList.add('hidden');
+
                     } else if (currentDay === "threedaysleft") {
+                        document.getElementById('plutoTrue').checked = true;
+                        document.getElementById('heightsTrue').checked = true;
+
+                        document.getElementById('threedaysleftSettings').checked = true;
+
                         sweetheartForm.classList.remove('hidden');
 
                         pluto = true;
@@ -179,7 +195,13 @@ fetch('./assets/data/data.json')
 
                         lastresortOption.classList.add('hidden');
                         underwaterhighwayOption.classList.add('hidden');
+
                     } else if (currentDay === "twodaysleft") {
+                        document.getElementById('twodaysleftSettings').checked = true;
+                        document.getElementById('plutoTrue').checked = true;
+                        document.getElementById('heightsTrue').checked = true;
+                        document.getElementById('sweetheartTrue').checked = true;
+
                         locationForm.classList.remove('hidden');
 
                         sweetheart = true;
@@ -196,11 +218,16 @@ fetch('./assets/data/data.json')
                     plutoForm.classList.add("hidden");
 
                     if (plutoValue === "true") {
+                        document.getElementById('plutoTrue').checked = true;
+
                         pluto = true;
                         heights = true;
 
                         locationForm.classList.remove('hidden');
+
                     } else {
+                        document.getElementById('plutoFalse').checked = true;
+
                         pluto = false;
 
                         heightsForm.classList.remove("hidden");
@@ -215,8 +242,13 @@ fetch('./assets/data/data.json')
                     heightsForm.classList.add("hidden");
 
                     if (heightValue === "true") {
+                        document.getElementById('heightsTrue').checked = true;
+
                         heights = true;
+
                     } else {
+                        document.getElementById('heightsFalse').checked = true;
+
                         heights = false;
 
                         otherworldOption.classList.add('hidden');
@@ -234,8 +266,13 @@ fetch('./assets/data/data.json')
                     sweetheartForm.classList.add("hidden");
 
                     if (sweetheartValue === "true") {
+                        document.getElementById('sweetheartTrue').checked = true;
+
                         sweetheart = true;
+
                     } else {
+                        document.getElementById('sweetheartFalse').checked = true;
+
                         sweetheart = false;
                     }
 
@@ -284,11 +321,15 @@ fetch('./assets/data/data.json')
                     localStorage.setItem("heights", heights);
                     localStorage.setItem("pluto", pluto);
                     localStorage.setItem("sweetheart", sweetheart);
+
+                    settingsDiv.classList.remove('hidden');
                 })
             })
         } else {
             let lastLocation = localStorage.getItem('location');
             spawnForms.classList.add('hidden');
+
+            settingsDiv.classList.remove('hidden');
 
             loadMap(lastLocation);
         }
@@ -298,6 +339,47 @@ fetch('./assets/data/data.json')
             var bounds = currentMap.size;
 
             localStorage.setItem("location", mapName);
+
+            if (currentDay === 'prologue') {
+                document.getElementById('prologueSettings').checked = true;
+
+                sweetheartSettings.classList.add('hidden');
+                document.getElementById('sweetheartFalse').checked = true;
+            } else if (currentDay === "threedaysleft") {
+                document.getElementById('threedaysleftSettings').checked = true;
+
+                heightsSettings.classList.add('hidden');
+                plutoSettings.classList.add('hidden');
+                document.getElementById('heightsTrue').checked = true;
+                document.getElementById('plutoTrue').checked = true;
+            } else if (currentDay === "twodaysleft") {
+                document.getElementById('twodaysleftSettings').checked = true;
+
+                heightsSettings.classList.add('hidden');
+                plutoSettings.classList.add('hidden');
+                sweetheartSettings.classList.add('hidden');
+                document.getElementById('heightsTrue').checked = true;
+                document.getElementById('plutoTrue').checked = true;
+                document.getElementById('sweetheartTrue').checked = true;
+            }
+
+            if (heights === true) {
+                document.getElementById('heightsTrue').checked = true;
+            } else {
+                document.getElementById('heightsFalse').checked = true;
+            }
+
+            if (pluto === true) {
+                document.getElementById('plutoTrue').checked = true;
+            } else {
+                document.getElementById('plutoFalse').checked = true;
+            }
+
+            if (sweetheart === true) {
+                document.getElementById('sweetheartTrue').checked = true;
+            } else {
+                document.getElementById('sweetheartFalse').checked = true;
+            }
 
             currentMapElements.clearLayers();
 
