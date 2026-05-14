@@ -13,6 +13,8 @@ body {
     font-family: omoriFont;
 
     overflow: hidden;
+
+    color: white;
 }
 
 html, body, main {
@@ -33,6 +35,17 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+button {
+    font-size: 44px;
+    
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    top: 10%;
+
+    cursor: pointer;
 }
 
 .sq__map, #map {
@@ -94,7 +107,17 @@ p {
 }
 
 .sq__settings {
-    color: white;
+    position: absolute;
+    z-index: 20;
+
+    left: -100%;
+    top: 10%;
+}
+
+.sq__settings--appear {
+    left: 0;
+
+    transition: all 0.5s;
 }
 
 .omori__border {
@@ -105,6 +128,9 @@ p {
     outline-width: 5px;
     outline-color: white;
     outline-style: solid;
+
+    color: white;
+    font-family: omoriFont;
 }
 
 .omori__border--click {

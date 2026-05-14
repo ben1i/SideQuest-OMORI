@@ -37,6 +37,15 @@ var heightsSettings = document.querySelector('.sq__parameter--heights');
 var plutoSettings = document.querySelector('.sq__parameter--pluto');
 var sweetheartSettings = document.querySelector('.sq__parameter--sweetheart');
 
+var settingsButton = document.querySelector('.sq__opensettings');
+
+settingsButton.addEventListener('click', function() {
+    settingsDiv.classList.add('sq__settings--appear');
+    localStorage.setItem('settings', 'open');
+
+    settingsButton.classList.add('hidden');
+})
+
 const heightsBlocked = [
     "pinwheelforest",
     "otherworld-ladder",
@@ -143,15 +152,68 @@ fetch('./assets/data/data.json')
     })
     .then(function(data) {
 
+        var openSettings = localStorage.getItem('settings');
+        if (openSettings === "open") {
+            settingsDiv.classList.add('sq__settings--appear');
+
+            settingsButton.classList.add('hidden');
+        }
+
         var currentDay = localStorage.getItem("day");
         pluto = localStorage.getItem("pluto") === "true";
         heights = localStorage.getItem("heights") === "true";
         sweetheart = localStorage.getItem("sweetheart") === "true";
-
-        
+        var lastLocation = localStorage.getItem('location');
+        var loadView = JSON.parse(localStorage.getItem('setView'));
+        console.log(loadView);
 
         var maps = data.maps;
         var currentMapElements = L.layerGroup().addTo(map);
+
+        document.querySelectorAll('input[name="chapter"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    localStorage.setItem('day', this.value);
+                    currentDay = this.value;
+
+                    location.reload();
+                    
+                }
+            })
+        });
+
+        document.querySelectorAll('input[name="heightsSettings"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    localStorage.setItem('heights', this.value);
+                    heights = this.value;
+
+                    location.reload();
+                }
+            })
+        });
+
+        document.querySelectorAll('input[name="plutoSettings"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    localStorage.setItem('pluto', this.value);
+                    pluto = this.value;
+
+                    location.reload();
+                }
+            })
+        });
+
+        document.querySelectorAll('input[name="sweetheartSettings"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    localStorage.setItem('sweetheart', this.value);
+                    sweetheart = this.value;
+
+                    location.reload();
+                }
+            })
+        });
         
         if (!currentDay) {
             let locationValue = "";
@@ -163,6 +225,8 @@ fetch('./assets/data/data.json')
             let sweetheartcastleOption = document.querySelector('.sq__label--sweetheartcastle');
             let lastresortOption = document.querySelector('.sq__label--lastresort');
             let underwaterhighwayOption = document.querySelector('.sq__label--underwaterhighway');
+
+            settingsButton.classList.add('hidden');
 
             const dayRadios = document.querySelectorAll('.sq__dayradio');
             dayRadios.forEach(radio => {
@@ -326,12 +390,11 @@ fetch('./assets/data/data.json')
                 })
             })
         } else {
-            let lastLocation = localStorage.getItem('location');
             spawnForms.classList.add('hidden');
 
             settingsDiv.classList.remove('hidden');
 
-            loadMap(lastLocation);
+            loadMap(lastLocation, loadView);
         }
 
         function loadMap(mapName, targetView) {
@@ -340,12 +403,25 @@ fetch('./assets/data/data.json')
 
             localStorage.setItem("location", mapName);
 
+            map.on('moveend', function(e) {
+                let currentView = map.getCenter();
+
+                const coords = [currentView.lat, currentView.lng];
+
+                localStorage.setItem('setView', JSON.stringify(coords));
+            })
+
             if (currentDay === 'prologue') {
+                sweetheart = false;
+
                 document.getElementById('prologueSettings').checked = true;
 
                 sweetheartSettings.classList.add('hidden');
                 document.getElementById('sweetheartFalse').checked = true;
             } else if (currentDay === "threedaysleft") {
+                heights = true;
+                pluto = true;
+
                 document.getElementById('threedaysleftSettings').checked = true;
 
                 heightsSettings.classList.add('hidden');
@@ -353,6 +429,10 @@ fetch('./assets/data/data.json')
                 document.getElementById('heightsTrue').checked = true;
                 document.getElementById('plutoTrue').checked = true;
             } else if (currentDay === "twodaysleft") {
+                heights = true;
+                pluto = true;
+                sweetheart = true;
+
                 document.getElementById('twodaysleftSettings').checked = true;
 
                 heightsSettings.classList.add('hidden');
@@ -366,12 +446,16 @@ fetch('./assets/data/data.json')
             if (heights === true) {
                 document.getElementById('heightsTrue').checked = true;
             } else {
+                pluto = false;
+                sweetheart = false;
                 document.getElementById('heightsFalse').checked = true;
+                plutoSettings.classList.add('hidden');
             }
 
             if (pluto === true) {
                 document.getElementById('plutoTrue').checked = true;
             } else {
+                sweetheart = false;
                 document.getElementById('plutoFalse').checked = true;
             }
 
