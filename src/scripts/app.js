@@ -38,6 +38,7 @@ var plutoSettings = document.querySelector('.sq__parameter--pluto');
 var sweetheartSettings = document.querySelector('.sq__parameter--sweetheart');
 
 var settingsButton = document.querySelector('.sq__opensettings');
+var resetButton = document.querySelector('.sq__reset');
 
 settingsButton.addEventListener('click', function() {
     settingsDiv.classList.add('sq__settings--appear');
@@ -152,13 +153,6 @@ fetch('./assets/data/data.json')
     })
     .then(function(data) {
 
-        var openSettings = localStorage.getItem('settings');
-        if (openSettings === "open") {
-            settingsDiv.classList.add('sq__settings--appear');
-
-            settingsButton.classList.add('hidden');
-        }
-
         var currentDay = localStorage.getItem("day");
         pluto = localStorage.getItem("pluto") === "true";
         heights = localStorage.getItem("heights") === "true";
@@ -213,6 +207,13 @@ fetch('./assets/data/data.json')
                     location.reload();
                 }
             })
+        });
+
+        resetButton.addEventListener('click', function() {
+            localStorage.clear();
+            localStorage.setItem('settings', 'closed');
+
+            location.reload();
         });
         
         if (!currentDay) {
@@ -402,6 +403,17 @@ fetch('./assets/data/data.json')
             var bounds = currentMap.size;
 
             localStorage.setItem("location", mapName);
+
+            var openSettings = localStorage.getItem('settings');
+            if (openSettings === "open") {
+                settingsDiv.classList.add('sq__settings--appear');
+
+                settingsButton.classList.add('hidden');
+            } else if (openSettings === "closed") {
+                settingsDiv.classList.remove('sq__settings--appear');
+
+                settingsButton.classList.remove('hidden');
+            }
 
             map.on('moveend', function(e) {
                 let currentView = map.getCenter();

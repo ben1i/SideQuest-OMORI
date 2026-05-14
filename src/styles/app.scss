@@ -11,6 +11,7 @@ body {
     margin: 0;
 
     font-family: omoriFont;
+    font-size: 22px;
 
     overflow: hidden;
 
@@ -37,7 +38,7 @@ main {
     background-size: contain;
 }
 
-button {
+.sq__opensettings {
     font-size: 44px;
     
     position: absolute;
@@ -112,12 +113,24 @@ p {
 
     left: -100%;
     top: 10%;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .sq__settings--appear {
     left: 0;
 
     transition: all 0.5s;
+}
+
+.sq__reset {
+    margin-top: 62px;
+    justify-self: center;
+
+    font-size: 31px;
+
+    cursor: pointer;
 }
 
 .omori__border {
