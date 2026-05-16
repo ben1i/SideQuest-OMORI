@@ -39,12 +39,20 @@ var sweetheartSettings = document.querySelector('.sq__parameter--sweetheart');
 
 var settingsButton = document.querySelector('.sq__opensettings');
 var resetButton = document.querySelector('.sq__reset');
+var settingsClose = document.querySelector('.sq__settingsclose img');
 
 settingsButton.addEventListener('click', function() {
     settingsDiv.classList.add('sq__settings--appear');
     localStorage.setItem('settings', 'open');
 
     settingsButton.classList.add('hidden');
+});
+
+settingsClose.addEventListener('click', function() {
+    settingsDiv.classList.remove('sq__settings--appear');
+    localStorage.setItem('settings', 'closed');
+
+    settingsButton.classList.remove('hidden');
 })
 
 const heightsBlocked = [
@@ -388,6 +396,8 @@ fetch('./assets/data/data.json')
                     localStorage.setItem("sweetheart", sweetheart);
 
                     settingsDiv.classList.remove('hidden');
+
+                    location.reload();
                 })
             })
         } else {

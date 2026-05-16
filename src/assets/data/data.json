@@ -271,6 +271,11 @@
                     "exitTo": "underwaterhighway-left",
                     "setView": [395, 5555],
                     "rotation" : "left"
+                },
+                {
+                    "coordinates": [307, 685],
+                    "exitTo": "lastresort",
+                    "setView": [505, 237]
                 }
             ]
         },
@@ -1325,8 +1330,8 @@
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/beard-ghost.webp",
                     "coordinates": [
-                        [1964, 2747],
-                        [2004, 2787]
+                        [834, 2717],
+                        [874, 2757]
                     ],
                     "step": 4
                 }
