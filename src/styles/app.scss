@@ -32,7 +32,7 @@ main {
     justify-content: center;
     align-items: center;
 
-    background-image: url(../assets/images/border_default.png) !important;
+    background-image: url(../assets/images/border_default.webp) !important;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -52,7 +52,7 @@ main {
 .sq__map, #map {
     width: 1150px;
     height: 870px;
-    background-image: url(../assets/images/backgroundimage.png) !important;
+    background-image: url(../assets/images/backgroundimage.webp) !important;
 
     z-index: 10;
 }

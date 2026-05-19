@@ -11,7 +11,7 @@ var map = L.map('map', {
 });
 
 var handIcon = L.icon({
-    iconUrl: './assets/images/arrow.png',
+    iconUrl: './assets/images/arrow.webp',
 
     iconSize: [50, 96,66],
     iconAnchor: [22, 94]
