@@ -2028,8 +2028,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-stage",
-                    "splashtext": "Go up to Sweetheat's Stage"
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go up to sweetheart's Stage"
                 },
 
                 "sweetheart-garden": {
@@ -2038,12 +2038,12 @@
                 },
 
                 "sweetheart-castle": {
-                    "goto": "sweetheat-garden",
+                    "goto": "sweetheart-garden",
                     "splashtext": "Go to the garden"
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-castle",
+                    "goto": "sweetheart-castle",
                     "splashtext": "Go to the Main Hall"
                 },
 
@@ -2057,7 +2057,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Deep Well"
                 },
@@ -2325,8 +2325,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-stage",
-                    "splashtext": "Go up to Sweetheat's Stage"
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go up to sweetheart's Stage"
                 },
 
                 "sweetheart-garden": {
@@ -2335,12 +2335,12 @@
                 },
 
                 "sweetheart-castle": {
-                    "goto": "sweetheat-garden",
+                    "goto": "sweetheart-garden",
                     "splashtext": "Go to the garden"
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-castle",
+                    "goto": "sweetheart-castle",
                     "splashtext": "Go to the Main Hall"
                 },
 
@@ -2354,7 +2354,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Deep Well"
                 },
@@ -2597,7 +2597,7 @@
                 },
 
                 "sproutmole-village": {
-                    "goto": "sweetheat-stage",
+                    "goto": "sweetheart-stage",
                     "splashtext": "Take the door the Sweetheart's Stage"
                 },
 
@@ -2622,8 +2622,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-garden",
-                    "splashtext": "Go up to Sweetheat's Garden"
+                    "goto": "sweetheart-garden",
+                    "splashtext": "Go up to sweetheart's Garden"
                 },
 
                 "sweetheart-garden": {
@@ -2637,7 +2637,7 @@
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-artgallery",
+                    "goto": "sweetheart-artgallery",
                     "splashtext": "Go to the Art Gallery"
                 },
 
@@ -2651,7 +2651,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Pyrefly Forest"
                 },
@@ -2919,8 +2919,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-stage",
-                    "splashtext": "Go up to Sweetheat's Stage"
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go up to sweetheart's Stage"
                 },
 
                 "sweetheart-garden": {
@@ -2934,7 +2934,7 @@
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-castle",
+                    "goto": "sweetheart-castle",
                     "splashtext": "Go into the castle's main hall"
                 },
 
@@ -2948,7 +2948,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Orange Oasis"
                 },
@@ -3216,8 +3216,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-stage",
-                    "splashtext": "Go up to Sweetheat's Stage"
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go up to sweetheart's Stage"
                 },
 
                 "sweetheart-garden": {
@@ -3231,7 +3231,7 @@
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-castle",
+                    "goto": "sweetheart-castle",
                     "splashtext": "Go into the castle's main hall"
                 },
 
@@ -3245,7 +3245,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Otherworld"
                 },
@@ -3276,7 +3276,7 @@
                 },
 
                 "orangeoasis": {
-                    "goto": "Beard Ghost",
+                    "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Otherworld"
                 },
 
@@ -3513,8 +3513,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-stage",
-                    "splashtext": "Go up to Sweetheat's Stage"
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go up to sweetheart's Stage"
                 },
 
                 "sweetheart-garden": {
@@ -3528,7 +3528,7 @@
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-castle",
+                    "goto": "sweetheart-castle",
                     "splashtext": "Go into the castle's main hall"
                 },
 
@@ -3542,7 +3542,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Otherworld"
                 },
@@ -3810,8 +3810,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-stage",
-                    "splashtext": "Go up to Sweetheat's Stage"
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go up to sweetheart's Stage"
                 },
 
                 "sweetheart-garden": {
@@ -3825,7 +3825,7 @@
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-castle",
+                    "goto": "sweetheart-castle",
                     "splashtext": "Go into the castle's main hall"
                 },
 
@@ -3839,7 +3839,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "vastforest-right",
                     "splashtext": "Go right to Vast Forest"
                 },
@@ -4107,8 +4107,8 @@
                 },
 
                 "sweetheart-underground": {
-                    "goto": "sweetheat-stage",
-                    "splashtext": "Go up to Sweetheat's Stage"
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go up to sweetheart's Stage"
                 },
 
                 "sweetheart-garden": {
@@ -4117,12 +4117,12 @@
                 },
 
                 "sweetheart-castle": {
-                    "goto": "sweetheat-garden",
+                    "goto": "sweetheart-garden",
                     "splashtext": "Go to the garden"
                 },
 
                 "sweetheart-lefthall": {
-                    "goto": "sweetheat-castle",
+                    "goto": "sweetheart-castle",
                     "splashtext": "Go to the Main Hall"
                 },
 
@@ -4136,7 +4136,7 @@
                     "splashtext": "Go down to Basil's Path"
                 },
 
-                "patht-to-basil": {
+                "path-to-basil": {
                     "goto": "pluto",
                     "splashtext": "Take Pluto's Spaceline to Deep Well"
                 },

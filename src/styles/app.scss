@@ -38,7 +38,7 @@ main {
     background-size: contain;
 }
 
-.sq__opensettings {
+.sq__opensettings, .sq__openquests {
     font-size: 44px;
     
     position: absolute;
@@ -47,6 +47,10 @@ main {
     top: 10%;
 
     cursor: pointer;
+}
+
+.sq__openquests {
+    top: 40%;
 }
 
 .sq__map, #map {
@@ -86,6 +90,11 @@ p {
     font-size: 22px;
 }
 
+li {
+    list-style: none;
+    font-size: 31px;
+}
+
 .sq__alert {
     margin-top: 15px;
     margin-bottom: 0;
@@ -107,7 +116,7 @@ p {
     }
 }
 
-.sq__settings {
+.sq__settings, .sq__quests {
     position: absolute;
     z-index: 20;
 
@@ -120,7 +129,11 @@ p {
     transition: all 0.5s;
 }
 
-.sq__settings--appear {
+.sq__quests {
+    top: 40%;
+}
+
+.sq__settings--appear, .sq__quests--appear {
     left: 0;
 }
 
@@ -133,7 +146,7 @@ p {
     cursor: pointer;
 }
 
-.sq__settingsclose {
+.sq__settingsclose, .sq__questclose {
     width: 100%;
     height: 40px;
 
