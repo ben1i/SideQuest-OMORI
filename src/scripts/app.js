@@ -535,7 +535,7 @@ fetch('./assets/data/data.json')
                                     let totalSteps = data.questsItinerary[activeQuest].length;
                                     activeQuestStep++;
 
-                                    if (activeQuest >= totalSteps) {
+                                    if (activeQuestStep >= totalSteps) {
                                         alert("Félicitations, la quête" + activeQuest + "est terminée !");
                                         localStorage.removeItem('quest');
                                         localStorage.removeItem('questStep');
