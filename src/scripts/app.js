@@ -52,20 +52,8 @@ var questButton = document.querySelector('.sq__openquests');
 var questClose = document.querySelector('.sq__questclose');
 
 var questList = document.querySelectorAll('.sq__questName');
-questList.forEach(list => {
-    list.addEventListener('click', function() {
-        localStorage.removeItem('quest');
-        localStorage.removeItem('questStep');
 
-        localStorage.setItem('quest', list.textContent.trim());
-        localStorage.setItem('questStep', 0);
-
-        questMenu.classList.remove('sq__quests--appear');
-        localStorage.setItem('questmenu', 'closed');
-
-        location.reload();
-    })
-})
+var splashtextBox = document.querySelector('.sq__splashtext');
 
 settingsButton.addEventListener('click', function() {
     settingsDiv.classList.add('sq__settings--appear');
@@ -381,6 +369,25 @@ fetch('./assets/data/data.json')
             loadMap(lastLocation, loadView);
         }
 
+        questList.forEach(list => {
+            list.addEventListener('click', function() {
+                localStorage.removeItem('quest');
+                localStorage.removeItem('questStep');
+                
+                if (list.textContent.trim() === "Ghost Party" && currentDay === "twodaysleft") {
+                    localStorage.setItem('quest', list.textContent.trim());
+                    localStorage.setItem('questStep', 0);
+
+                    questMenu.classList.remove('sq__quests--appear');
+                    localStorage.setItem('questmenu', 'closed');
+
+                    location.reload();
+                } else {
+                    alert('This quest cannot be done in your current chapter');
+                }
+            })
+        })
+
         function loadMap(mapName, targetView) {
             var currentMap = maps[mapName];
             var bounds = currentMap.size;
@@ -516,10 +523,9 @@ fetch('./assets/data/data.json')
                     }
 
                     if (interactionSplashtext && interaction) {
-                        interaction.bindTooltip(interactionSplashtext, {
-                            permanent: false,
-                            direction: top
-                        });
+                        splashtextBox.textContent = interactionSplashtext;
+
+                        splashtextBox.classList.remove('hidden');
                     }
 
                     if (mapName === "pluto") {
@@ -583,11 +589,9 @@ fetch('./assets/data/data.json')
                         var marker = L.marker(exitData.coordinates, {icon: currentIcon});
 
                         if (currentSplashtext) {
-                            marker.bindTooltip(currentSplashtext, {
-                                permanent: false,
-                                direction: top,
-                                offset: [0, -40]
-                            });
+                            splashtextBox.textContent = currentSplashtext;
+
+                            splashtextBox.classList.remove('hidden');
                         }
 
                         if (exitData.rotation) {

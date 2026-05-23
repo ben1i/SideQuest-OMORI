@@ -36,6 +36,8 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+
+    position: relative;
 }
 
 .sq__opensettings, .sq__openquests {
@@ -164,6 +166,19 @@ li {
 
         cursor: pointer;
     }
+}
+
+.sq__splashtext {
+    position: absolute;
+
+    z-index: 20;
+
+    align-self: flex-end;
+
+    width: 40%;
+    height: 10%;
+
+    font-size: 44px;
 }
 
 .omori__border {
