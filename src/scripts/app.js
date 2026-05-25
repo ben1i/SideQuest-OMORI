@@ -2,6 +2,7 @@
 
 import L from 'leaflet';
 import 'leaflet-rotatedmarker';
+//import './Leaflet.EdgeMarker';
 
 var map = L.map('map', {
     crs: L.CRS.Simple,
@@ -22,6 +23,22 @@ var itineraryIcon = L.icon({
     iconSize: [50, 96,66],
     iconAnchor: [22, 94]
 })
+
+
+/*
+var edgeTargetLayer = L.layerGroup();
+
+var edgeMarkerLayer = L.edgeMarker({
+    icon: L.icon({
+        iconUrl: './assets/images/arrow-pointer.webp',
+        clickable: true,
+        iconSize: [96,50, 60],
+        iconAnchor: [150, 150]
+    }),
+    rotateIcons: true,
+    layerGroup: edgeTargetLayer
+}).addTo(map);
+*/
 
 var lastMap;
 
@@ -479,6 +496,7 @@ fetch('./assets/data/data.json')
             }
 
             currentMapElements.clearLayers();
+            //edgeTargetLayer.clearLayers();
 
             var bgImage = L.imageOverlay(currentMap.pathtoimage, bounds, { zIndex: 1 });
             currentMapElements.addLayer(bgImage);
@@ -574,6 +592,7 @@ fetch('./assets/data/data.json')
                     } else {
                         var currentIcon = handIcon;
                         var currentSplashtext;
+                        //var isTargetExit = false;
 
                         if (activeQuest) {
                             let currentStep = data.questsItinerary[activeQuest][activeQuestStep];
@@ -583,6 +602,7 @@ fetch('./assets/data/data.json')
                             if (exitData.exitTo === nextDestination) {
                                 currentIcon = itineraryIcon;
                                 currentSplashtext = currentStep[mapName].splashtext;
+                                //isTargetExit = true;
                             }
                         }
 
@@ -609,6 +629,12 @@ fetch('./assets/data/data.json')
                         });
 
                         currentMapElements.addLayer(marker);
+
+                        /*
+                        if (isTargetExit) {
+                            edgeTargetLayer.addLayer(marker);
+                        }    
+                        */
                     }
                 });
             }
