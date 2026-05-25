@@ -11,8 +11,14 @@ var map = L.map('map', {
 });
 
 var handIcon = L.icon({
-    iconUrl: './assets/images/arrow.png',
+    iconUrl: './assets/images/arrow.webp',
 
+    iconSize: [50, 96,66],
+    iconAnchor: [22, 94]
+})
+
+var itineraryIcon = L.icon({
+    iconUrl: './assets/images/arrow-highlight.png',
     iconSize: [50, 96,66],
     iconAnchor: [22, 94]
 })
@@ -41,6 +47,14 @@ var settingsButton = document.querySelector('.sq__opensettings');
 var resetButton = document.querySelector('.sq__reset');
 var settingsClose = document.querySelector('.sq__settingsclose img');
 
+var questMenu = document.querySelector('.sq__quests');
+var questButton = document.querySelector('.sq__openquests');
+var questClose = document.querySelector('.sq__questclose');
+
+var questList = document.querySelectorAll('.sq__questName');
+
+var splashtextBox = document.querySelector('.sq__splashtext');
+
 settingsButton.addEventListener('click', function() {
     settingsDiv.classList.add('sq__settings--appear');
     localStorage.setItem('settings', 'open');
@@ -53,6 +67,20 @@ settingsClose.addEventListener('click', function() {
     localStorage.setItem('settings', 'closed');
 
     settingsButton.classList.remove('hidden');
+})
+
+questButton.addEventListener('click', function() {
+    questMenu.classList.add('sq__quests--appear');
+    localStorage.setItem('questmenu', "open");
+
+    questButton.classList.add('hidden');
+});
+
+questClose.addEventListener('click', function() {
+    questMenu.classList.remove('sq__quests--appear');
+    localStorage.setItem('questmenu', "closed");
+
+    questButton.classList.remove('hidden');
 })
 
 const heightsBlocked = [
@@ -83,78 +111,6 @@ const threedaysleftBlocked = [
     "northlake"
 ];
 
-/*
-map.on('mousemove', function (e) {
-    console.log(e.latlng);
-});
-
-map.on('mousemove', function (e) {
-    console.log(e.latlng);
-});
-
-var bounds = [[0, 0], [1472, 1344]];
-var image = L.imageOverlay('./assets/images/map92.png', bounds).addTo(map);
-
-
-map.setView([736, 672], 0.2)
-map.setMaxBounds(bounds);
-
-var marker = L.marker([10, 750], {icon: handIcon});
-marker.addTo(map);
-marker.on('click', function() {
-    bounds = [[0, 0], [2560, 1600]];
-    image = L.imageOverlay("./assets/images/map93.webp", bounds).addTo(map);
-    map.setMaxBounds(bounds);
-    map.setView([2560, 800], 0.2);
-
-    marker.remove();
-});
-
-var daisy = L.imageOverlay('./assets/images/daisy.png', [[550, 165], [595, 210]], {
-    interactive: true
-}).addTo(map);
-*/
-
-/*
-fetch('./assets/data/data.json')
-    .then(function(data) {
-        return data.json();
-    })
-    .then(function(data) {
-
-        var maps  = data.maps;
-        
-        var currentMap = maps.ghostparty;
-        
-        var exits = currentMap.exits;
-
-        var bounds = currentMap.size;
-        var image = L.imageOverlay("" + currentMap.pathtoimage + "", bounds).addTo(map);
-        
-        map.setView([(bounds[1][0]) / 2, (bounds[1][1] / 2)], 1);
-        map.setMaxBounds(bounds);
-
-        var interaction = L.imageOverlay("" + currentMap.interactions[0].interactionimage + "", currentMap.interactions[0].coordinates, {
-            interactive: true
-        }).addTo(map);
-
-        var marker = L.marker(exits[0].coordinates, {icon: handIcon}).addTo(map);
-        marker.on('click', function() {
-
-            var lastMap = currentMap;
-            console.log(lastMap.exits[0].setView)
-            currentMap = maps[exits[0].exitTo];
-
-            bounds = currentMap.size;
-            var image = L.imageOverlay("" + currentMap.pathtoimage + "", bounds).addTo(map);
-            map.setMaxBounds(bounds);
-            map.setView(lastMap.exits[0].setView, 1);
-
-            marker.remove();
-        });
-    })
-*/
-
 fetch('./assets/data/data.json')
     .then(function(data) {
         return data.json();
@@ -167,7 +123,9 @@ fetch('./assets/data/data.json')
         sweetheart = localStorage.getItem("sweetheart") === "true";
         var lastLocation = localStorage.getItem('location');
         var loadView = JSON.parse(localStorage.getItem('setView'));
-        console.log(loadView);
+
+        var activeQuest = localStorage.getItem('quest');
+        var activeQuestStep = localStorage.getItem('questStep');
 
         var maps = data.maps;
         var currentMapElements = L.layerGroup().addTo(map);
@@ -236,6 +194,7 @@ fetch('./assets/data/data.json')
             let underwaterhighwayOption = document.querySelector('.sq__label--underwaterhighway');
 
             settingsButton.classList.add('hidden');
+            questButton.classList.add('hidden');
 
             const dayRadios = document.querySelectorAll('.sq__dayradio');
             dayRadios.forEach(radio => {
@@ -396,6 +355,7 @@ fetch('./assets/data/data.json')
                     localStorage.setItem("sweetheart", sweetheart);
 
                     settingsDiv.classList.remove('hidden');
+                    questMenu.classList.remove('hidden');
 
                     location.reload();
                 })
@@ -404,9 +364,29 @@ fetch('./assets/data/data.json')
             spawnForms.classList.add('hidden');
 
             settingsDiv.classList.remove('hidden');
+            questMenu.classList.remove('hidden');
 
             loadMap(lastLocation, loadView);
         }
+
+        questList.forEach(list => {
+            list.addEventListener('click', function() {
+                localStorage.removeItem('quest');
+                localStorage.removeItem('questStep');
+                
+                if (list.textContent.trim() === "Ghost Party" && currentDay === "twodaysleft") {
+                    localStorage.setItem('quest', list.textContent.trim());
+                    localStorage.setItem('questStep', 0);
+
+                    questMenu.classList.remove('sq__quests--appear');
+                    localStorage.setItem('questmenu', 'closed');
+
+                    location.reload();
+                } else {
+                    alert('This quest cannot be done in your current chapter');
+                }
+            })
+        })
 
         function loadMap(mapName, targetView) {
             var currentMap = maps[mapName];
@@ -423,6 +403,17 @@ fetch('./assets/data/data.json')
                 settingsDiv.classList.remove('sq__settings--appear');
 
                 settingsButton.classList.remove('hidden');
+            }
+
+            var openQuests = localStorage.getItem('questmenu');
+            if (openQuests === "open") {
+                questMenu.classList.add('sq__settings--appear');
+
+                questButton.classList.add('hidden');
+            } else if (openQuests === "closed") {
+                questMenu.classList.remove('sq__settings--appear');
+
+                questButton.classList.remove('hidden');
             }
 
             map.on('moveend', function(e) {
@@ -502,9 +493,15 @@ fetch('./assets/data/data.json')
 
             if (currentMap.interactions) {
                 currentMap.interactions.forEach(function(interactionData) {
+                    var interactionSplashtext;
+                    if (activeQuest) {
+                        let currentStep = data.questsItinerary[activeQuest][activeQuestStep];
 
-                    console.log(interactionData.interactionName);
-                    
+                        let targetMap = currentStep[mapName].goto;
+
+                        interactionSplashtext = currentStep[mapName].splashtext;
+                    }
+
                     if (mapName === "pluto") {
                         if (currentDay === "prologue" && (interactionData.interactionName === "orangeoasis" || interactionData.interactionName === "pyreflyforest" || interactionData.interactionName === "deepwell")) {
                             console.log("This path is not available");
@@ -525,10 +522,39 @@ fetch('./assets/data/data.json')
                         });
                     }
 
+                    if (interactionSplashtext && interaction) {
+                        splashtextBox.textContent = interactionSplashtext;
+
+                        splashtextBox.classList.remove('hidden');
+                    }
+
                     if (mapName === "pluto") {
                         interaction.on('click', function() {
                             loadMap(interactionData.map, interactionData.setView);
                         });
+                    } else {
+                        interaction.on('click', function() {
+                            if (activeQuest) {
+                                let currentStep = data.questsItinerary[activeQuest][activeQuestStep];
+
+                                if (interactionData.interactionName === currentStep[mapName].goto) {
+                                    let totalSteps = data.questsItinerary[activeQuest].length;
+                                    activeQuestStep++;
+
+                                    if (activeQuestStep >= totalSteps) {
+                                        alert("Félicitations, la quête" + activeQuest + "est terminée !");
+                                        localStorage.removeItem('quest');
+                                        localStorage.removeItem('questStep');
+                                        activeQuest = null;
+                                    } else {
+                                        alert("Étape terminée! Suivante");
+                                        localStorage.setItem('questStep', activeQuestStep);
+                                    }
+
+                                    loadMap(mapName);
+                                }
+                            }
+                        })
                     }
 
                     currentMapElements.addLayer(interaction);
@@ -546,7 +572,27 @@ fetch('./assets/data/data.json')
                     } else if (currentDay === "threedaysleft" && threedaysleftBlocked.includes(exitData.exitTo)) {
                         console.log("This area is not accessible during Three Days Left");
                     } else {
-                        var marker = L.marker(exitData.coordinates, {icon: handIcon});
+                        var currentIcon = handIcon;
+                        var currentSplashtext;
+
+                        if (activeQuest) {
+                            let currentStep = data.questsItinerary[activeQuest][activeQuestStep];
+
+                            let nextDestination = currentStep[mapName].goto;
+
+                            if (exitData.exitTo === nextDestination) {
+                                currentIcon = itineraryIcon;
+                                currentSplashtext = currentStep[mapName].splashtext;
+                            }
+                        }
+
+                        var marker = L.marker(exitData.coordinates, {icon: currentIcon});
+
+                        if (currentSplashtext) {
+                            splashtextBox.textContent = currentSplashtext;
+
+                            splashtextBox.classList.remove('hidden');
+                        }
 
                         if (exitData.rotation) {
                             if (exitData.rotation === "left") {

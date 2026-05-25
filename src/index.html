@@ -214,10 +214,22 @@
       <button class=" sq__reset omori__border omori__border--click">RESET ALL SETTINGS</button>
     </div>
 
-    <div class="sq__buttons">
-      <div class="sq__quests"></div>
-      <div class="sq__list"></div>
+    <button class="sq__openquests omori__border omori__border--click"><span>Open Quests List</span></button>
+    <div class="sq__quests omori__border hidden">
+      <div class="sq__questclose">
+        <img src="./assets/images/cross.svg" alt="Close Settings">
+      </div>
+
+      <h2>Quest List</h2>
+
+      <ul>
+        <li class="sq__questName">
+          Ghost Party
+        </li>
+      </ul>
     </div>
+
+    <div class="sq__splashtext omori__border hidden">Placeholder</div>
 
     <div class="sq__map" id="map"></div>
   </main>

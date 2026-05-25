@@ -2,4 +2,13 @@ $c-bg: #efefef;
 $c-alt: #e41612;
 $c-text: #444;
 
-$size-text: 18px;
+$size-text: 22px;
+
+$step--2: clamp(0.5002rem, 0.4569rem + 0.1924vw, 0.6877rem);
+$step--1: clamp(0.7072rem, 0.646rem + 0.272vw, 0.9724rem);
+$step-0: clamp(1rem, 0.9135rem + 0.3846vw, 1.375rem);
+$step-1: clamp(1.414rem, 1.2916rem + 0.5438vw, 1.9443rem);
+$step-2: clamp(1.9994rem, 1.8264rem + 0.769vw, 2.7492rem);
+$step-3: clamp(2.8271rem, 2.5825rem + 1.0874vw, 3.8873rem);
+$step-4: clamp(3.9976rem, 3.6516rem + 1.5375vw, 5.4967rem);
+$step-5: clamp(5.6526rem, 5.1634rem + 2.1741vw, 7.7723rem);
