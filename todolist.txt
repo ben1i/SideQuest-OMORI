@@ -1,0 +1,9 @@
+- Texte d'accueil
+- Modifier un peu les splash texts
+- Logo
+- Pouvoir arrêter de faire une quêtes + revenir à 0
+- benjaminbrihaye.com : convertir toutes les images en WebP
+- Meilleur responsive mobile (les deux boutons)
+- Bulle de discussion au dessus des interactions
+
+- Si assez de temps, faire une deuxième quête

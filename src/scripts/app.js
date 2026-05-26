@@ -18,7 +18,7 @@ var handIcon = L.icon({
 })
 
 var itineraryIcon = L.icon({
-    iconUrl: './assets/images/arrow-highlight.png',
+    iconUrl: './assets/images/arrow-highlight.webp',
     iconSize: [50, 96,66],
     iconAnchor: [22, 94]
 })
