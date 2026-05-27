@@ -66,6 +66,19 @@ main {
     }
 }
 
+.sq__logo {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100%;
+    }
+}
+
 .sq__ok {
     width: 100%;
 
