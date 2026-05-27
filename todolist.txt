@@ -1,8 +1,5 @@
 - Texte d'accueil
-- Pouvoir arrêter de faire une quêtes + revenir à 0
 - Crédits
-- Mettre à jour le Case Study
-- Cliquer sur un Ghost hors mode qûete demande si on veut lancer la quête
 
 
 

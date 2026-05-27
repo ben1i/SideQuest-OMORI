@@ -55,6 +55,13 @@ var questList = document.querySelectorAll('.sq__questName');
 
 var splashtextBox = document.querySelector('.sq__splashtext');
 
+var stopQuestButton= document.querySelector('.sq__stopquest');
+
+var questWarning = document.querySelector('.sq__warning');
+var questWarningYes = document.querySelector('.sq__yesQuest');
+var questWarningNo = document.querySelector('.sq__noQuest');
+var questWarningText = document.querySelector('.sq__warningtext');
+
 settingsButton.addEventListener('click', function() {
     settingsDiv.classList.add('sq__settings--appear');
     localStorage.setItem('settings', 'open');
@@ -373,6 +380,9 @@ fetch('./assets/data/data.json')
             list.addEventListener('click', function() {
                 localStorage.removeItem('quest');
                 localStorage.removeItem('questStep');
+
+                stopQuestButton.classList.remove('hidden');
+                localStorage.setItem('stopQuestButton', 'open');
                 
                 if (list.textContent.trim() === "Ghost Party" && currentDay === "twodaysleft") {
                     localStorage.setItem('quest', list.textContent.trim());
@@ -415,6 +425,22 @@ fetch('./assets/data/data.json')
 
                 questButton.classList.remove('hidden');
             }
+
+            var stopQuestButtonMemory = localStorage.getItem('stopQuestButton');
+            if (stopQuestButtonMemory === "open") {
+                stopQuestButton.classList.remove('hidden');
+            } else {
+                stopQuestButton.classList.add('hidden');
+            }
+
+            stopQuestButton.addEventListener('click', function() {
+                localStorage.removeItem('quest');
+                localStorage.removeItem('questStep');
+
+                localStorage.setItem('stopQuestButton', 'close');
+
+                location.reload();
+            })
 
             map.on('moveend', function(e) {
                 let currentView = map.getCenter();
@@ -520,6 +546,25 @@ fetch('./assets/data/data.json')
                             interactive: true,
                             zIndex: 2
                         });
+
+                        if (!activeQuest && interactionData.questName === "Ghost Party") {
+                            interaction.addEventListener('click', function() {
+                                questWarningText.textContent = "This interaction is part of the " + interactionData.questName + " quest. Would you like to start this quest ?"
+                                questWarning.classList.remove('hidden');
+
+                                questWarningYes.addEventListener('click', function() {
+                                    localStorage.setItem('quest', interactionData.questName);
+                                    localStorage.setItem('questStep', 0);
+                                    localStorage.setItem('stopQuestButton', 'open');
+
+                                    location.reload();
+                                });
+
+                                questWarningNo.addEventListener('click', function() {
+                                    questWarning.classList.add('hidden');
+                                });
+                            })
+                        }
                     }
 
                     if (interactionSplashtext && interaction) {

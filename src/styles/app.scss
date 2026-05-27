@@ -46,19 +46,28 @@ main {
     position: relative;
 }
 
-.sq__opensettings, .sq__openquests {
+.sq__opensettings, .sq__openquests, .sq__stopquest {
     font-size: $step-2;
     
     position: absolute;
     z-index: 20;
-    left: 0;
-    top: 10%;
 
     cursor: pointer;
 }
 
+.sq__opensettings {
+    left: 0;
+    top: 10%;
+}
+
 .sq__openquests {
     top: 40%;
+    left: 0;
+}
+
+.sq__stopquest {
+    right: 0;
+    top: 10%;
 }
 
 .sq__map, #map {
@@ -223,6 +232,34 @@ li {
     height: 10%;
 
     font-size: $step-2;
+}
+
+.sq__warning {
+    width: 40%;
+    height: 40%;
+
+    position: absolute;
+
+    z-index: 40;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sq__warningtext {
+        font-size: $step-1;
+    }
+
+    .sq__warningButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .sq__warningButton {
+            font-size: $step-1;
+            width: 100%;
+        }
+    }
 }
 
 .omori__border {
