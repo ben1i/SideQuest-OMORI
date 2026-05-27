@@ -46,6 +46,47 @@ main {
     position: relative;
 }
 
+.sq__home {
+    position: absolute;
+    z-index: 50;
+
+    width: 70%;
+
+    max-height: 100vh;
+    overflow-y: auto;
+
+    p {
+        font-size: $step-1;
+    }
+
+    .sq__pararagraphsmall {
+        margin-top: 62px;
+
+        font-size: $step-0;
+    }
+}
+
+.sq__ok {
+    width: 100%;
+
+    margin-top: 62px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        width: 20%;
+        padding: 15px;
+
+        font-size: $step-2;
+
+        &:hover {
+            padding: 15px;
+        }
+    }
+}
+
 .sq__opensettings, .sq__openquests, .sq__stopquest {
     font-size: $step-2;
     
@@ -111,6 +152,8 @@ main {
 h1 {
     font-size: $step-3;
     margin: 0;
+
+    text-align: center;
 }
 
 h2 {

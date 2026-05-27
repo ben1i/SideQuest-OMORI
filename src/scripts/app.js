@@ -25,6 +25,15 @@ var itineraryIcon = L.icon({
 
 var lastMap;
 
+var homeScreen = document.querySelector('.sq__home');
+var homeButton = document.querySelector('.sq__okButton');
+
+homeButton.addEventListener('click', function() {
+    homeScreen.classList.add('hidden');
+
+    localStorage.setItem('homeScreen', 'closed');
+})
+
 var spawnForms = document.querySelector('.sq__spawn');
 var dayForm = document.querySelector('.sq__day');
 var heightsForm = document.querySelector('.sq__heights');
@@ -136,6 +145,15 @@ fetch('./assets/data/data.json')
 
         var maps = data.maps;
         var currentMapElements = L.layerGroup().addTo(map);
+
+        var isHomeScreenOpen = localStorage.getItem('homeScreen');
+        if (isHomeScreenOpen) {
+            if (isHomeScreenOpen === "open") {
+                homeScreen.classList.remove('hidden');
+            } else {
+                homeScreen.classList.add('hidden');
+            }
+        }
 
         document.querySelectorAll('input[name="chapter"]').forEach(radio => {
             radio.addEventListener('change', function () {
@@ -380,11 +398,11 @@ fetch('./assets/data/data.json')
             list.addEventListener('click', function() {
                 localStorage.removeItem('quest');
                 localStorage.removeItem('questStep');
-
-                stopQuestButton.classList.remove('hidden');
-                localStorage.setItem('stopQuestButton', 'open');
                 
                 if (list.textContent.trim() === "Ghost Party" && currentDay === "twodaysleft") {
+                    stopQuestButton.classList.remove('hidden');
+                    localStorage.setItem('stopQuestButton', 'open');
+
                     localStorage.setItem('quest', list.textContent.trim());
                     localStorage.setItem('questStep', 0);
 

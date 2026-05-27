@@ -1,10 +1,8 @@
-- Texte d'accueil
 - Crédits
 - Mettre à jour le Case Study (image de la progression du design)
 
 
-
-- Modifier un peu les splash texts
+- Modifier un peu les splash texts (mieux définir la direction à prendre)
 - Logo
 - Meilleur responsive mobile (les deux boutons)
 
