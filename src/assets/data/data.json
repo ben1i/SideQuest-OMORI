@@ -25,7 +25,7 @@
                     "questName": "Ghost Party",
                     "interactionimage": "./assets/images/interaction/tophat-ghost.webp",
                     "coordinates": [
-                        [342, 516],
+                        [367, 516],
                         [302, 476]
                     ],
                     "step": 1
@@ -186,7 +186,7 @@
                     "interactionimage": "./assets/images/interaction/mustache-ghost.webp",
                     "coordinates": [
                         [122, 122],
-                        [162, 162]
+                        [187, 162]
                     ],
                     "step": 2
                 }
@@ -1062,7 +1062,7 @@
                     "interactionimage": "./assets/images/interaction/princess-ghost.webp",
                     "coordinates": [
                         [616, 572],
-                        [656, 612]
+                        [681, 612]
                     ],
                     "step": 3
                 }
@@ -1332,7 +1332,7 @@
                     "interactionimage": "./assets/images/interaction/beard-ghost.webp",
                     "coordinates": [
                         [834, 2717],
-                        [874, 2757]
+                        [899, 2757]
                     ],
                     "step": 4
                 }
@@ -1622,7 +1622,7 @@
                     "interactionimage": "./assets/images/interaction/sunhat-ghost.webp",
                     "coordinates": [
                         [768, 467],
-                        [808, 507]
+                        [833, 507]
                     ],
                     "step": 5
                 }
@@ -1738,7 +1738,7 @@
                     "interactionimage": "./assets/images/interaction/glasses-ghost.webp",
                     "coordinates": [
                         [645, 860],
-                        [685, 900]
+                        [710, 900]
                     ],
                     "step": 6
                 }
@@ -1799,7 +1799,7 @@
                     "interactionimage": "./assets/images/interaction/propeller-ghost.webp",
                     "coordinates": [
                         [1824, 704],
-                        [1864, 744]
+                        [1889, 744]
                     ],
                     "step": 7
                 }

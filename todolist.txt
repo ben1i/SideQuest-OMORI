@@ -1,8 +1,14 @@
 - Texte d'accueil
+- Pouvoir arrêter de faire une quêtes + revenir à 0
+- Crédits
+- Mettre à jour le Case Study
+- Cliquer sur un Ghost hors mode qûete demande si on veut lancer la quête
+
+
+
 - Modifier un peu les splash texts
 - Logo
-- Pouvoir arrêter de faire une quêtes + revenir à 0
 - Meilleur responsive mobile (les deux boutons)
-- Bulle de discussion au dessus des interactions
+
 
 - Si assez de temps, faire une deuxième quête
