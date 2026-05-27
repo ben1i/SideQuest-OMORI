@@ -1,5 +1,6 @@
 - Texte d'accueil
 - Crédits
+- Mettre à jour le Case Study (image de la progression du design)
 
 
 
