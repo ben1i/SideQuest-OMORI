@@ -3,8 +3,8 @@
 
 
 - Modifier un peu les splash texts (mieux définir la direction à prendre)
-- Logo
 - Meilleur responsive mobile (les deux boutons)
+- Placer des éléments manquant sur la carte (le portail de Ghost Party, la porte vers Sweetheat Stage, etc.)
 
 
 - Si assez de temps, faire une deuxième quête

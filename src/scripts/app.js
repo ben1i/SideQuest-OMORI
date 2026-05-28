@@ -608,7 +608,10 @@ fetch('./assets/data/data.json')
                                         alert("Félicitations, la quête" + activeQuest + "est terminée !");
                                         localStorage.removeItem('quest');
                                         localStorage.removeItem('questStep');
+                                        localStorage.setItem('stopQuestButton', 'closed')
                                         activeQuest = null;
+
+                                        location.reload();
                                     } else {
                                         alert("Étape terminée! Suivante");
                                         localStorage.setItem('questStep', activeQuestStep);
