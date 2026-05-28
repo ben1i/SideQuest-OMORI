@@ -566,16 +566,21 @@ fetch('./assets/data/data.json')
                         });
 
                         if (!activeQuest && interactionData.questName === "Ghost Party") {
-                            interaction.addEventListener('click', function() {
+                            interaction.on('click', function() {
                                 questWarningText.textContent = "This interaction is part of the " + interactionData.questName + " quest. Would you like to start this quest ?"
                                 questWarning.classList.remove('hidden');
 
                                 questWarningYes.addEventListener('click', function() {
-                                    localStorage.setItem('quest', interactionData.questName);
-                                    localStorage.setItem('questStep', 0);
-                                    localStorage.setItem('stopQuestButton', 'open');
+                                    if (interactionData.questName === "Ghost Party" && currentDay === "twodaysleft") {
+                                        localStorage.setItem('quest', interactionData.questName);
+                                        localStorage.setItem('questStep', 0);
+                                        localStorage.setItem('stopQuestButton', 'open');
 
-                                    location.reload();
+                                        location.reload();
+                                    } else {
+                                        alert('This quest cannot be done in your current chapter');
+                                        questWarning.classList.add('hidden');
+                                    }
                                 });
 
                                 questWarningNo.addEventListener('click', function() {
