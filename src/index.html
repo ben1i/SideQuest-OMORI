@@ -237,11 +237,11 @@
         <div class="sq__parameter sq__parameter--sweetheart">
           <h3>Did you beat Sweetheart ?</h3>
           <label class="sq__labelSettings">
-            <input class="sq__sweetheartradio" type="radio" name="sweetheartSettings" id="sweetheartTrue" value="false">
+            <input class="sq__sweetheartradio" type="radio" name="sweetheartSettings" id="sweetheartTrue" value="true">
             <span>Yes</span>
           </label>
           <label class="sq__labelSettings">
-            <input class="sq__sweetheartradio" type="radio" name="sweetheartSettings" id="sweetheartFalse" value="true">
+            <input class="sq__sweetheartradio" type="radio" name="sweetheartSettings" id="sweetheartFalse" value="false">
             <span>No</span>
           </label>
         </div>
@@ -257,10 +257,8 @@
 
       <h2>Quest List</h2>
 
-      <ul>
-        <li class="sq__questName">
-          Ghost Party
-        </li>
+      <ul class="sq__questList">
+        <li class="sq__questName">Ghost Party</li>
       </ul>
     </div>
 
@@ -279,6 +277,27 @@
     </div>
 
     <div class="sq__map" id="map"></div>
+
+    <button class="sq__creditsButton omori__border omori__border--click"><span>CREDITS</span></button>
+    <section class="sq__credits omori__border hidden">
+      <div class="sq__creditsclose">
+        <img src="./assets/images/cross.svg" alt="Close Settings">
+      </div>
+      <h2>Credits</h2>
+      <ul class="sq__creditlist">
+        <li>Font OMORI_GAME2 extracted from the OMORI game files. This asset is property of OMOCAT LLC.</li>
+        <li>All map images come from OMORI maps (<a href="https://goats.dev/omori/maps.html" target="_blank">https://goats.dev/omori/maps.html</a>). These assets are properties of OMOCAT LLC.</li>
+        <li>“Red hands” picture for the exit are extracted from the OMORI game files and enhanced using PiXel ScaLer (<a href="https://irokaru.github.io/pixel-scaler/" target="_blank">https://irokaru.github.io/pixel-scaler/</a>). This asset is property of OMOCAT LLC.</li>
+        <li>“Interaction bubble” picture for interactions are extracted from the OMORI game files and enhanced using PiXel ScaLer (<a href="https://irokaru.github.io/pixel-scaler/" target="_blank">https://irokaru.github.io/pixel-scaler/</a>). This asset is property of OMOCAT LLC.</li>
+        <li>Interactions’ pictures such as the ghosts, NPCs’ or certain objects come from the OMORI Fandom Wiki (<a href="https://omori.fandom.com/wiki/OMORI_WIKI" target="_blank">https://omori.fandom.com/wiki/OMORI_WIKI</a>). These assets are properties of OMOCAT LLC.</li>
+        <li>Background inside the map section (Pixelated space background) extracted from the OMORI game files. This asset is property of OMOCAT LLC.</li>
+        <li>Website’s background image and border-image of the map uploaded by Helius_Universe on the “The Spriters Ressource” website (<a href="https://www.spriters-resource.com/nintendo_switch/omori/asset/177557/" target="_blank">https://www.spriters-resource.com/nintendo_switch/omori/asset/177557/</a>). Edited with Photoshop for repeatability. These assets are properties of OMOCAT LLC.</li>
+        <li>All images except interactions and the “Pinwheel Forest” map have been converted to WebPs’ using VERT (<a href="https://vert.sh/convert/" target="_blank">https://vert.sh/convert/</a>).</li>
+        <li>The game map, the red hands exits and the interactions function with Leaflet JS library (<a href="https://leafletjs.com/index.html" target="_blank">https://leafletjs.com/index.html</a>). Learned how to use Leaflet using their tutorials (<a href="https://leafletjs.com/examples.html" target="_blank">https://leafletjs.com/examples.html</a>) and documentation (<a href="https://leafletjs.com/reference.html" target="_blank">https://leafletjs.com/reference.html</a>).</li>
+        <li>Markers for the exits are rotated using the Leaflet.RotatedMarker Leaflet plugin, developed by bbecquet and available on GitHub (<a href="https://github.com/bbecquet/Leaflet.RotatedMarker" target="_blank">https://github.com/bbecquet/Leaflet.RotatedMarker</a>).</li>
+        <li>Use of JSON.stringify() and JSON.parse for localStorage learned from Stack Overflow (<a href="https://stackoverflow.com/questions/16083919/push-json-objects-to-array-in-localstorage" target="_blank">https://stackoverflow.com/questions/16083919/push-json-objects-to-array-in-localstorage</a>)</li>
+      </ul>
+    </section>
   </main>
   
 </body>

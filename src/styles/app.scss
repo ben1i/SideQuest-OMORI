@@ -38,12 +38,24 @@ main {
 
     background-image: url(../assets/images/background-image.webp) !important;
     background-position: center;
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-size: contain;
 
     width: 100%;
 
     position: relative;
+}
+
+.sq__credits {
+    position: absolute;
+
+    z-index: 60;
+
+    width: 70%;
+
+    a {
+        color: red;
+    }
 }
 
 .sq__home {
@@ -100,7 +112,7 @@ main {
     }
 }
 
-.sq__opensettings, .sq__openquests, .sq__stopquest {
+.sq__opensettings, .sq__openquests, .sq__stopquest, .sq__creditsButton {
     font-size: $step-2;
     
     position: absolute;
@@ -122,6 +134,11 @@ main {
 .sq__stopquest {
     right: 0;
     top: 10%;
+}
+
+.sq__creditsButton {
+    left: 0;
+    bottom: 10%;
 }
 
 .sq__map, #map {
@@ -181,11 +198,11 @@ p {
     font-size: $step-0;
 }
 
-ul {
+.sq__questList {
     padding: 0;
 }
 
-li {
+.sq__questName {
     margin-left: 0;
     width: 100%;
 
@@ -257,7 +274,7 @@ li {
     cursor: pointer;
 }
 
-.sq__settingsclose, .sq__questclose {
+.sq__settingsclose, .sq__questclose, .sq__creditsclose {
     width: 100%;
     height: 40px;
 

@@ -34,6 +34,22 @@ homeButton.addEventListener('click', function() {
     localStorage.setItem('homeScreen', 'closed');
 })
 
+var creditsSection = document.querySelector('.sq__credits');
+var creditsButton = document.querySelector('.sq__creditsButton');
+var creditsClose = document.querySelector('.sq__creditsclose')
+
+creditsButton.addEventListener('click', function() {
+    creditsButton.classList.add('hidden');
+
+    creditsSection.classList.remove('hidden');
+});
+
+creditsClose.addEventListener('click', function() {
+    creditsButton.classList.remove('hidden');
+
+    creditsSection.classList.add('hidden');
+})
+
 var spawnForms = document.querySelector('.sq__spawn');
 var dayForm = document.querySelector('.sq__day');
 var heightsForm = document.querySelector('.sq__heights');
@@ -155,7 +171,7 @@ fetch('./assets/data/data.json')
             }
         }
 
-        document.querySelectorAll('input[name="chapter"]').forEach(radio => {
+        document.querySelectorAll('.sq__chapterradio').forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
                     localStorage.setItem('day', this.value);
@@ -167,7 +183,7 @@ fetch('./assets/data/data.json')
             })
         });
 
-        document.querySelectorAll('input[name="heightsSettings"]').forEach(radio => {
+        document.querySelectorAll('.sq__heightsradio').forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
                     localStorage.setItem('heights', this.value);
@@ -178,7 +194,7 @@ fetch('./assets/data/data.json')
             })
         });
 
-        document.querySelectorAll('input[name="plutoSettings"]').forEach(radio => {
+        document.querySelectorAll('.sq__plutoradio').forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
                     localStorage.setItem('pluto', this.value);
@@ -189,7 +205,7 @@ fetch('./assets/data/data.json')
             })
         });
 
-        document.querySelectorAll('input[name="sweetheartSettings"]').forEach(radio => {
+        document.querySelectorAll('.sq__sweetheartradio').forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
                     localStorage.setItem('sweetheart', this.value);
@@ -399,11 +415,11 @@ fetch('./assets/data/data.json')
                 localStorage.removeItem('quest');
                 localStorage.removeItem('questStep');
                 
-                if (list.textContent.trim() === "Ghost Party" && currentDay === "twodaysleft") {
+                if (list.textContent === "Ghost Party" && currentDay === "twodaysleft") {
                     stopQuestButton.classList.remove('hidden');
                     localStorage.setItem('stopQuestButton', 'open');
 
-                    localStorage.setItem('quest', list.textContent.trim());
+                    localStorage.setItem('quest', list.textContent);
                     localStorage.setItem('questStep', 0);
 
                     questMenu.classList.remove('sq__quests--appear');
@@ -529,10 +545,12 @@ fetch('./assets/data/data.json')
             
             map.setMaxBounds(bounds);
 
+            console.log(bounds)
+
             if (targetView) {
                 map.setView(targetView, 1);
             } else {
-                map.setView([(bounds[1][0]) / 2, (bounds[1][1] / 2)], 1);
+                map.setView([(bounds[1][0]) / 2, (bounds[1][1] / 2)], 1); //toujours au centre de la carte [y de la carte / 2, x de la map / 2]
             }
 
             if (currentMap.interactions) {
