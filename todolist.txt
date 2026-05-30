@@ -1,7 +1,3 @@
-- Crédits
-- Mettre à jour le Case Study (image de la progression du design)
-
-
 - Meilleur responsive mobile (les deux boutons)
 - Placer des éléments manquant sur la carte (le portail de Ghost Party, la porte vers Sweetheat Stage, etc.)
 
