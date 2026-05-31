@@ -194,7 +194,7 @@ fetch('./assets/data/data.json')
             })
         });
 
-        document.querySelectorAll('.sq__plutoradio').forEach(radio => {
+        document.querySelectorAll('.sq__plutoradioSettings').forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
                     localStorage.setItem('pluto', this.value);
@@ -205,7 +205,7 @@ fetch('./assets/data/data.json')
             })
         });
 
-        document.querySelectorAll('.sq__sweetheartradio').forEach(radio => {
+        document.querySelectorAll('.sq__sweetheartradioSettings').forEach(radio => {
             radio.addEventListener('change', function () {
                 if (this.checked) {
                     localStorage.setItem('sweetheart', this.value);
