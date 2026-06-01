@@ -1,4 +1,4 @@
-- Meilleur responsive mobile (les deux boutons)
+- Meilleur responsive mobile (tester aussi tablette IPad Pro 11')
 - Placer des éléments manquant sur la carte (le portail de Ghost Party, la porte vers Sweetheat Stage, etc.)
 
 
