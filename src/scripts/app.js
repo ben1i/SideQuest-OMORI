@@ -415,7 +415,7 @@ fetch('./assets/data/data.json')
                 localStorage.removeItem('quest');
                 localStorage.removeItem('questStep');
                 
-                if (list.textContent === "Ghost Party" && currentDay === "twodaysleft") {
+                if ((list.textContent === "Ghost Party" && currentDay === "twodaysleft") || (list.textContent === "Pessi's Thing" && sweetheart === true)) {
                     stopQuestButton.classList.remove('hidden');
                     localStorage.setItem('stopQuestButton', 'open');
 
@@ -583,13 +583,13 @@ fetch('./assets/data/data.json')
                             zIndex: 2
                         });
 
-                        if (!activeQuest && interactionData.questName === "Ghost Party") {
+                        if (!activeQuest && (interactionData.questName === "Ghost Party" || interactionData.questName === "Pessi's Thing")) {
                             interaction.on('click', function() {
                                 questWarningText.textContent = "This interaction is part of the " + interactionData.questName + " quest. Would you like to start this quest ?"
                                 questWarning.classList.remove('hidden');
 
                                 questWarningYes.addEventListener('click', function() {
-                                    if (interactionData.questName === "Ghost Party" && currentDay === "twodaysleft") {
+                                    if ((interactionData.questName === "Ghost Party" && currentDay === "twodaysleft") || (interactionData.questName === "Pessi's Thing" && sweetheart === true)) {
                                         localStorage.setItem('quest', interactionData.questName);
                                         localStorage.setItem('questStep', 0);
                                         localStorage.setItem('stopQuestButton', 'open');
@@ -628,7 +628,7 @@ fetch('./assets/data/data.json')
                                     activeQuestStep++;
 
                                     if (activeQuestStep >= totalSteps) {
-                                        alert("Félicitations, la quête" + activeQuest + "est terminée !");
+                                        alert("Félicitations, la quête " + activeQuest + " est terminée !");
                                         localStorage.removeItem('quest');
                                         localStorage.removeItem('questStep');
                                         localStorage.setItem('stopQuestButton', 'closed')
