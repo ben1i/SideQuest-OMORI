@@ -1099,7 +1099,7 @@
                     "interactionimage": "./assets/images/interaction/berly.webp",
                     "coordinates": [
                         [803, 701],
-                        [833, 731]
+                        [863, 731]
                     ],
                     "step": 1
                 },
@@ -1188,7 +1188,7 @@
                     "interactionimage": "./assets/images/interaction/lostball.webp",
                     "coordinates": [
                         [348, 406],
-                        [388, 446]
+                        [428, 446]
                     ],
                     "step": 2
                 }
@@ -7521,6 +7521,899 @@
                 "pluto": {
                     "goto": "pyrefly-to-mole",
                     "splashtext": "Take Pluto's Spaceline to Pyrefly Forest"
+                }
+            }
+        ],
+
+        "Berly's Lost Ball" : [
+            {
+                "ghostparty": {
+                    "goto": "lastresort",
+                    "splashtext": "Take the portal to Last Resort"
+                },
+                
+                "lastresort": {
+                    "goto": "deepwell",
+                    "splashtext": "Go down then take the taxi to Deep Well"
+                },
+
+                "lastresort-hall": {
+                    "goto": "lastresort",
+                    "splashtext": "Go outside of Last Resort"
+                },
+
+                "lastresort-elevator-top": {
+                    "goto": "lastresort-fourthfloor",
+                    "splashtext": "Go back to the first floor"
+                },
+
+                "lastresort-fourthfloor": {
+                    "goto": "lastresort-elevator-bottom",
+                    "splashtext": "Take the elevators down to the first floor"
+                },
+
+                "lastresort-fourthfloor-room": {
+                    "goto": "lastresort-fourthfloor",
+                    "splashtext": "Go outside of the room"
+                },
+
+                "lastresort-elevator-bottom": {
+                    "goto": "lastresort-hall",
+                    "splashtext": "Take the elevators down to the first floor"
+                },
+
+                "underwaterhighway": {
+                    "goto": "deepwell",
+                    "splashtext": "Take the taxi on the left roadway to Deep Well"
+                },
+
+                "deepwell": {
+                    "goto": "underwaterhighway-left",
+                    "splashtext": "Go left to Underwater Highway after the gate"
+                },
+
+                "underwaterhighway-left": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "constructionsite": {
+                    "goto": "underwaterhighway-left",
+                    "splashtext": "Go down to Underwater Highway"
+                },
+
+                "deepwell-ladder": {
+                    "goto": "deepwell",
+                    "splashtext": "Climb down to Deep Well"
+                },
+
+                "deepwell-entrance": {
+                    "goto": "deepwell-ladder",
+                    "splashtext": "Enter the Deep Well"
+                },
+
+                "northlake": {
+                    "goto": "deepwell-entrance",
+                    "splashtext": "Go up to the Deep Well entrance"
+                },
+
+                "vastforest-northcoast": {
+                    "goto": "northlake",
+                    "splashtext": "Swim up into North Lake"
+                },
+
+                "stumpentrance": {
+                    "goto": "playground",
+                    "splashtext": "Go down to the playground"
+                },
+
+                "pyreflyforest-entrance": {
+                    "goto": "stumpentrance",
+                    "splashtext": "Go right to the Stump Entrance"
+                },
+
+                "pyreflyforest-1": {
+                    "goto": "pyreflyforest-2",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-2": {
+                    "goto": "pyreflyforest-3",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-3": {
+                    "goto": "pyreflyforest-4",
+                    "splashtext": "Go left"
+                },
+
+                "pyreflyforest-4": {
+                    "goto": "pyreflyforest-5",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-5": {
+                    "goto": "pyrefly-to-sweetheart",
+                    "splashtext": "Go up"
+                },
+
+                "pyrefly-to-sweetheart": {
+                    "goto": "pyrefly-to-mole",
+                    "splashtext": "Go up"
+                },
+
+                "pyrefly-to-mole": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "sproutmole-village": {
+                    "goto": "pyrefly-to-mole",
+                    "splashtext": "Go outside of the Sprout Mole Village"
+                },
+
+                "sproutmole-village-2": {
+                    "goto": "sproutmole-village",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sproutmole-village-3": {
+                    "goto": "sproutmole-village-2",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sproutmole-village-4": {
+                    "goto": "sproutmole-village-2",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sweetheart-stage": {
+                    "goto": "sproutmole-village",
+                    "splashtext": "Go back to the Sprout Mole Village"
+                },
+
+                "sweetheart-underground": {
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go down then up to Sweetheart's Stage"
+                },
+
+                "sweetheart-garden": {
+                    "goto": "sweetheart-underground",
+                    "splashtext": "Go into the trap to the underground in the middle of the garden"
+                },
+
+                "sweetheart-castle": {
+                    "goto": "sweetheart-garden",
+                    "splashtext": "Go down to the garden"
+                },
+
+                "sweetheart-lefthall": {
+                    "goto": "sweetheart-castle",
+                    "splashtext": "Go right into the Castle's Main Hall"
+                },
+
+                "sweetheart-artgallery": {
+                    "goto": "sweetheart-lefthall",
+                    "splashtext": "Go back to the corridor"
+                },
+
+                "playground": {
+                    "goto": "Berly",
+                    "splashtext": "Talk to Berly or Van"
+                },
+
+                "path-to-basil": {
+                    "goto": "vastforest-right",
+                    "splashtext": "Go up to the playground"
+                },
+
+                "vastforest-left": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Go right to Basil's Path"
+                },
+
+                "trainstation-wait": {
+                    "goto": "vastforest-left",
+                    "splashtext": "Go down to Vast Forest"
+                },
+
+                "trainstation-vastforest": {
+                    "goto": "trainstation-wait",
+                    "splashtext": "Go down to the train station queue"
+                },
+
+                "train-to-oasis": {
+                    "goto": "trainstation-orangeoasis",
+                    "splashtext": "Go to Orange Oasis"
+                },
+
+                "trainstation-orangeoasis": {
+                    "goto": "orangeoasis",
+                    "splashtext": "Go to Orange Oasis"
+                },
+
+                "orangeoasis": {
+                    "goto": "Beard Ghost",
+                    "splashtext": "Take Pluto's Spaceline to Otherworld"
+                },
+
+                "train-to-forest": {
+                    "goto": "trainstation-vastforest",
+                    "splashtext": "Go to Vast Forest"
+                },
+
+                "otherworld-entrance": {
+                    "goto": "stumpentrance",
+                    "splashtext": "Go left to the Stump Entrance"
+                },
+
+                "otherworld-ladder": {
+                    "goto": "otherworld-sprout",
+                    "splashtext": "Go up to Otherworld"
+                },
+
+                "otherworld-sprout": {
+                    "goto": "otherworld-field",
+                    "splashtext": "Go up to Otherworld"
+                },
+
+                "otherworld-field": {
+                    "goto": "otherworld",
+                    "splashtext": "Go up to the Otherwold Place"
+                },
+
+                "otherworld": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "otherworld-to-junkyard": {
+                    "goto": "otherworld",
+                    "splashtext": "Go left to Otherworld"
+                },
+
+                "otherworld-lake": {
+                    "goto": "otherworld-to-junkyard",
+                    "splashtext": "Go left to path to the junkyard"
+                },
+
+                "otherworld-to-frozenlake": {
+                    "goto": "otherworld-lake",
+                    "splashtext": "Take the path up to the Lake"
+                },
+
+                "frozenlake": {
+                    "goto": "otherworld-to-frozenlake",
+                    "splashtext": "Go back left to Otherworld"
+                },
+
+                "junkyard-entrance": {
+                    "goto": "otherworld-to-junkyard",
+                    "splashtext": "Go down and go back to Otherworld"
+                },
+
+                "junkyard": {
+                    "goto": "junkyard-entrance",
+                    "splashtext": "Go back to the entrance"
+                },
+
+                "junkyard-right": {
+                    "goto": "junkyard",
+                    "splashtext": "Go left back to the entrance"
+                },
+
+                "junkyard-puzzle": {
+                    "goto": "junkyard-right",
+                    "splashtext": "Go left back to the entrance"
+                },
+
+                "vastforest-right": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Go left to Basil's Path"
+                },
+
+                "pinwheelforest": {
+                    "goto": "vastforest-right",
+                    "splashtext": "Climb down of Pinwheel Forest"
+                },
+
+                "pluto": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                }
+            },
+
+            {
+                "ghostparty": {
+                    "goto": "lastresort",
+                    "splashtext": "Take the portal to Last Resort"
+                },
+                
+                "lastresort": {
+                    "goto": "deepwell",
+                    "splashtext": "Go down then take the taxi to Deep Well"
+                },
+
+                "lastresort-hall": {
+                    "goto": "lastresort",
+                    "splashtext": "Go outside of Last Resort"
+                },
+
+                "lastresort-elevator-top": {
+                    "goto": "lastresort-fourthfloor",
+                    "splashtext": "Go back to the first floor"
+                },
+
+                "lastresort-fourthfloor": {
+                    "goto": "lastresort-elevator-bottom",
+                    "splashtext": "Take the elevators down to the first floor"
+                },
+
+                "lastresort-fourthfloor-room": {
+                    "goto": "lastresort-fourthfloor",
+                    "splashtext": "Go outside of the room"
+                },
+
+                "lastresort-elevator-bottom": {
+                    "goto": "lastresort-hall",
+                    "splashtext": "Take the elevators down to the first floor"
+                },
+
+                "underwaterhighway": {
+                    "goto": "deepwell",
+                    "splashtext": "Take the taxi on the left roadway to Deep Well"
+                },
+
+                "deepwell": {
+                    "goto": "underwaterhighway-left",
+                    "splashtext": "Go left to Underwater Highway after the gate"
+                },
+
+                "underwaterhighway-left": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "constructionsite": {
+                    "goto": "underwaterhighway-left",
+                    "splashtext": "Go down to Underwater Highway"
+                },
+
+                "deepwell-ladder": {
+                    "goto": "deepwell",
+                    "splashtext": "Climb down to Deep Well"
+                },
+
+                "deepwell-entrance": {
+                    "goto": "deepwell-ladder",
+                    "splashtext": "Enter the Deep Well"
+                },
+
+                "northlake": {
+                    "goto": "deepwell-entrance",
+                    "splashtext": "Go up to the Deep Well entrance"
+                },
+
+                "vastforest-northcoast": {
+                    "goto": "northlake",
+                    "splashtext": "Swim up into North Lake"
+                },
+
+                "stumpentrance": {
+                    "goto": "playground",
+                    "splashtext": "Go down to the playground"
+                },
+
+                "pyreflyforest-entrance": {
+                    "goto": "stumpentrance",
+                    "splashtext": "Go right to the Stump Entrance"
+                },
+
+                "pyreflyforest-1": {
+                    "goto": "pyreflyforest-2",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-2": {
+                    "goto": "pyreflyforest-3",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-3": {
+                    "goto": "pyreflyforest-4",
+                    "splashtext": "Go left"
+                },
+
+                "pyreflyforest-4": {
+                    "goto": "pyreflyforest-5",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-5": {
+                    "goto": "pyrefly-to-sweetheart",
+                    "splashtext": "Go up"
+                },
+
+                "pyrefly-to-sweetheart": {
+                    "goto": "pyrefly-to-mole",
+                    "splashtext": "Go up"
+                },
+
+                "pyrefly-to-mole": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "sproutmole-village": {
+                    "goto": "pyrefly-to-mole",
+                    "splashtext": "Go outside of the Sprout Mole Village"
+                },
+
+                "sproutmole-village-2": {
+                    "goto": "sproutmole-village",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sproutmole-village-3": {
+                    "goto": "sproutmole-village-2",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sproutmole-village-4": {
+                    "goto": "sproutmole-village-2",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sweetheart-stage": {
+                    "goto": "sproutmole-village",
+                    "splashtext": "Go back to the Sprout Mole Village"
+                },
+
+                "sweetheart-underground": {
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go down then up to Sweetheart's Stage"
+                },
+
+                "sweetheart-garden": {
+                    "goto": "sweetheart-underground",
+                    "splashtext": "Go into the trap to the underground in the middle of the garden"
+                },
+
+                "sweetheart-castle": {
+                    "goto": "sweetheart-garden",
+                    "splashtext": "Go down to the garden"
+                },
+
+                "sweetheart-lefthall": {
+                    "goto": "sweetheart-castle",
+                    "splashtext": "Go right into the Castle's Main Hall"
+                },
+
+                "sweetheart-artgallery": {
+                    "goto": "sweetheart-lefthall",
+                    "splashtext": "Go back to the corridor"
+                },
+
+                "playground": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Go down to Basil's Path"
+                },
+
+                "path-to-basil": {
+                    "goto": "vastforest-left",
+                    "splashtext": "Go left to Vast Forest"
+                },
+
+                "vastforest-left": {
+                    "goto": "Lost Ball",
+                    "splashtext": "Go along the bottom all the way left, then cross the little bridge. Berly's Lost Ball is below the bench"
+                },
+
+                "trainstation-wait": {
+                    "goto": "vastforest-left",
+                    "splashtext": "Go down to Vast Forest"
+                },
+
+                "trainstation-vastforest": {
+                    "goto": "trainstation-wait",
+                    "splashtext": "Go down to the train station queue"
+                },
+
+                "train-to-oasis": {
+                    "goto": "trainstation-orangeoasis",
+                    "splashtext": "Go to Orange Oasis"
+                },
+
+                "trainstation-orangeoasis": {
+                    "goto": "orangeoasis",
+                    "splashtext": "Go to Orange Oasis"
+                },
+
+                "orangeoasis": {
+                    "goto": "Beard Ghost",
+                    "splashtext": "Take Pluto's Spaceline to Otherworld"
+                },
+
+                "train-to-forest": {
+                    "goto": "trainstation-vastforest",
+                    "splashtext": "Go to Vast Forest"
+                },
+
+                "otherworld-entrance": {
+                    "goto": "stumpentrance",
+                    "splashtext": "Go left to the Stump Entrance"
+                },
+
+                "otherworld-ladder": {
+                    "goto": "otherworld-sprout",
+                    "splashtext": "Go up to Otherworld"
+                },
+
+                "otherworld-sprout": {
+                    "goto": "otherworld-field",
+                    "splashtext": "Go up to Otherworld"
+                },
+
+                "otherworld-field": {
+                    "goto": "otherworld",
+                    "splashtext": "Go up to the Otherwold Place"
+                },
+
+                "otherworld": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "otherworld-to-junkyard": {
+                    "goto": "otherworld",
+                    "splashtext": "Go left to Otherworld"
+                },
+
+                "otherworld-lake": {
+                    "goto": "otherworld-to-junkyard",
+                    "splashtext": "Go left to path to the junkyard"
+                },
+
+                "otherworld-to-frozenlake": {
+                    "goto": "otherworld-lake",
+                    "splashtext": "Take the path up to the Lake"
+                },
+
+                "frozenlake": {
+                    "goto": "otherworld-to-frozenlake",
+                    "splashtext": "Go back left to Otherworld"
+                },
+
+                "junkyard-entrance": {
+                    "goto": "otherworld-to-junkyard",
+                    "splashtext": "Go down and go back to Otherworld"
+                },
+
+                "junkyard": {
+                    "goto": "junkyard-entrance",
+                    "splashtext": "Go back to the entrance"
+                },
+
+                "junkyard-right": {
+                    "goto": "junkyard",
+                    "splashtext": "Go left back to the entrance"
+                },
+
+                "junkyard-puzzle": {
+                    "goto": "junkyard-right",
+                    "splashtext": "Go left back to the entrance"
+                },
+
+                "vastforest-right": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Go left to Basil's Path"
+                },
+
+                "pinwheelforest": {
+                    "goto": "vastforest-right",
+                    "splashtext": "Climb down of Pinwheel Forest"
+                },
+
+                "pluto": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                }
+            },
+
+            {
+                "ghostparty": {
+                    "goto": "lastresort",
+                    "splashtext": "Take the portal to Last Resort"
+                },
+                
+                "lastresort": {
+                    "goto": "deepwell",
+                    "splashtext": "Go down then take the taxi to Deep Well"
+                },
+
+                "lastresort-hall": {
+                    "goto": "lastresort",
+                    "splashtext": "Go outside of Last Resort"
+                },
+
+                "lastresort-elevator-top": {
+                    "goto": "lastresort-fourthfloor",
+                    "splashtext": "Go back to the first floor"
+                },
+
+                "lastresort-fourthfloor": {
+                    "goto": "lastresort-elevator-bottom",
+                    "splashtext": "Take the elevators down to the first floor"
+                },
+
+                "lastresort-fourthfloor-room": {
+                    "goto": "lastresort-fourthfloor",
+                    "splashtext": "Go outside of the room"
+                },
+
+                "lastresort-elevator-bottom": {
+                    "goto": "lastresort-hall",
+                    "splashtext": "Take the elevators down to the first floor"
+                },
+
+                "underwaterhighway": {
+                    "goto": "deepwell",
+                    "splashtext": "Take the taxi on the left roadway to Deep Well"
+                },
+
+                "deepwell": {
+                    "goto": "underwaterhighway-left",
+                    "splashtext": "Go left to Underwater Highway after the gate"
+                },
+
+                "underwaterhighway-left": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "constructionsite": {
+                    "goto": "underwaterhighway-left",
+                    "splashtext": "Go down to Underwater Highway"
+                },
+
+                "deepwell-ladder": {
+                    "goto": "deepwell",
+                    "splashtext": "Climb down to Deep Well"
+                },
+
+                "deepwell-entrance": {
+                    "goto": "deepwell-ladder",
+                    "splashtext": "Enter the Deep Well"
+                },
+
+                "northlake": {
+                    "goto": "deepwell-entrance",
+                    "splashtext": "Go up to the Deep Well entrance"
+                },
+
+                "vastforest-northcoast": {
+                    "goto": "northlake",
+                    "splashtext": "Swim up into North Lake"
+                },
+
+                "stumpentrance": {
+                    "goto": "playground",
+                    "splashtext": "Go down to the playground"
+                },
+
+                "pyreflyforest-entrance": {
+                    "goto": "stumpentrance",
+                    "splashtext": "Go right to the Stump Entrance"
+                },
+
+                "pyreflyforest-1": {
+                    "goto": "pyreflyforest-2",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-2": {
+                    "goto": "pyreflyforest-3",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-3": {
+                    "goto": "pyreflyforest-4",
+                    "splashtext": "Go left"
+                },
+
+                "pyreflyforest-4": {
+                    "goto": "pyreflyforest-5",
+                    "splashtext": "Go up"
+                },
+
+                "pyreflyforest-5": {
+                    "goto": "pyrefly-to-sweetheart",
+                    "splashtext": "Go up"
+                },
+
+                "pyrefly-to-sweetheart": {
+                    "goto": "pyrefly-to-mole",
+                    "splashtext": "Go up"
+                },
+
+                "pyrefly-to-mole": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "sproutmole-village": {
+                    "goto": "pyrefly-to-mole",
+                    "splashtext": "Go outside of the Sprout Mole Village"
+                },
+
+                "sproutmole-village-2": {
+                    "goto": "sproutmole-village",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sproutmole-village-3": {
+                    "goto": "sproutmole-village-2",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sproutmole-village-4": {
+                    "goto": "sproutmole-village-2",
+                    "splashtext": "Go up to the Sprout Mole Village entrance"
+                },
+
+                "sweetheart-stage": {
+                    "goto": "sproutmole-village",
+                    "splashtext": "Go back to the Sprout Mole Village"
+                },
+
+                "sweetheart-underground": {
+                    "goto": "sweetheart-stage",
+                    "splashtext": "Go down then up to Sweetheart's Stage"
+                },
+
+                "sweetheart-garden": {
+                    "goto": "sweetheart-underground",
+                    "splashtext": "Go into the trap to the underground in the middle of the garden"
+                },
+
+                "sweetheart-castle": {
+                    "goto": "sweetheart-garden",
+                    "splashtext": "Go down to the garden"
+                },
+
+                "sweetheart-lefthall": {
+                    "goto": "sweetheart-castle",
+                    "splashtext": "Go right into the Castle's Main Hall"
+                },
+
+                "sweetheart-artgallery": {
+                    "goto": "sweetheart-lefthall",
+                    "splashtext": "Go back to the corridor"
+                },
+
+                "playground": {
+                    "goto": "Berly",
+                    "splashtext": "Talk to Berly to complete the quest and gain a new attack for Aubrey"
+                },
+
+                "path-to-basil": {
+                    "goto": "playground",
+                    "splashtext": "Go up to the playground"
+                },
+
+                "vastforest-left": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Go back to the playground"
+                },
+
+                "trainstation-wait": {
+                    "goto": "vastforest-left",
+                    "splashtext": "Go down to Vast Forest"
+                },
+
+                "trainstation-vastforest": {
+                    "goto": "trainstation-wait",
+                    "splashtext": "Go down to the train station queue"
+                },
+
+                "train-to-oasis": {
+                    "goto": "trainstation-orangeoasis",
+                    "splashtext": "Go to Orange Oasis"
+                },
+
+                "trainstation-orangeoasis": {
+                    "goto": "orangeoasis",
+                    "splashtext": "Go to Orange Oasis"
+                },
+
+                "orangeoasis": {
+                    "goto": "Beard Ghost",
+                    "splashtext": "Take Pluto's Spaceline to Otherworld"
+                },
+
+                "train-to-forest": {
+                    "goto": "trainstation-vastforest",
+                    "splashtext": "Go to Vast Forest"
+                },
+
+                "otherworld-entrance": {
+                    "goto": "stumpentrance",
+                    "splashtext": "Go left to the Stump Entrance"
+                },
+
+                "otherworld-ladder": {
+                    "goto": "otherworld-sprout",
+                    "splashtext": "Go up to Otherworld"
+                },
+
+                "otherworld-sprout": {
+                    "goto": "otherworld-field",
+                    "splashtext": "Go up to Otherworld"
+                },
+
+                "otherworld-field": {
+                    "goto": "otherworld",
+                    "splashtext": "Go up to the Otherwold Place"
+                },
+
+                "otherworld": {
+                    "goto": "pluto",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
+                },
+
+                "otherworld-to-junkyard": {
+                    "goto": "otherworld",
+                    "splashtext": "Go left to Otherworld"
+                },
+
+                "otherworld-lake": {
+                    "goto": "otherworld-to-junkyard",
+                    "splashtext": "Go left to path to the junkyard"
+                },
+
+                "otherworld-to-frozenlake": {
+                    "goto": "otherworld-lake",
+                    "splashtext": "Take the path up to the Lake"
+                },
+
+                "frozenlake": {
+                    "goto": "otherworld-to-frozenlake",
+                    "splashtext": "Go back left to Otherworld"
+                },
+
+                "junkyard-entrance": {
+                    "goto": "otherworld-to-junkyard",
+                    "splashtext": "Go down and go back to Otherworld"
+                },
+
+                "junkyard": {
+                    "goto": "junkyard-entrance",
+                    "splashtext": "Go back to the entrance"
+                },
+
+                "junkyard-right": {
+                    "goto": "junkyard",
+                    "splashtext": "Go left back to the entrance"
+                },
+
+                "junkyard-puzzle": {
+                    "goto": "junkyard-right",
+                    "splashtext": "Go left back to the entrance"
+                },
+
+                "vastforest-right": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Go left to Basil's Path"
+                },
+
+                "pinwheelforest": {
+                    "goto": "vastforest-right",
+                    "splashtext": "Climb down of Pinwheel Forest"
+                },
+
+                "pluto": {
+                    "goto": "path-to-basil",
+                    "splashtext": "Take Pluto's Spaceline to Vast Forest"
                 }
             }
         ]

@@ -415,7 +415,7 @@ fetch('./assets/data/data.json')
                 localStorage.removeItem('quest');
                 localStorage.removeItem('questStep');
                 
-                if ((list.textContent === "Ghost Party" && currentDay === "twodaysleft") || (list.textContent === "Pessi's Thing" && sweetheart === true)) {
+                if ((list.textContent === "Ghost Party" && currentDay === "twodaysleft") || (list.textContent === "Pessi's Thing" && sweetheart === true) || (list.textContent === "Berly's Lost Ball" && (heights === true && currentDay !== "twodaysleft"))) {
                     stopQuestButton.classList.remove('hidden');
                     localStorage.setItem('stopQuestButton', 'open');
 
@@ -578,33 +578,38 @@ fetch('./assets/data/data.json')
                             })
                         }
                     } else {
-                        var interaction = L.imageOverlay(interactionData.interactionimage, interactionData.coordinates, {
-                            interactive: true,
-                            zIndex: 2
-                        });
 
-                        if (!activeQuest && (interactionData.questName === "Ghost Party" || interactionData.questName === "Pessi's Thing")) {
-                            interaction.on('click', function() {
-                                questWarningText.textContent = "This interaction is part of the " + interactionData.questName + " quest. Would you like to start this quest ?"
-                                questWarning.classList.remove('hidden');
+                        if (currentDay === "twodaysleft" && (interactionData.interactionName === "Berly" || interactionData.interactionName === "Van" || interactionData.interactionName === "Lost Ball")) {
+                            return;
+                        } else {
+                            var interaction = L.imageOverlay(interactionData.interactionimage, interactionData.coordinates, {
+                                interactive: true,
+                                zIndex: 2
+                            });
 
-                                questWarningYes.addEventListener('click', function() {
-                                    if ((interactionData.questName === "Ghost Party" && currentDay === "twodaysleft") || (interactionData.questName === "Pessi's Thing" && sweetheart === true)) {
-                                        localStorage.setItem('quest', interactionData.questName);
-                                        localStorage.setItem('questStep', 0);
-                                        localStorage.setItem('stopQuestButton', 'open');
+                            if (!activeQuest && (interactionData.questName === "Ghost Party" || interactionData.questName === "Pessi's Thing" || interactionData.questName === "Berly's Lost Ball")) {
+                                interaction.on('click', function() {
+                                    questWarningText.textContent = "This interaction is part of the " + interactionData.questName + " quest. Would you like to start this quest ?"
+                                    questWarning.classList.remove('hidden');
 
-                                        location.reload();
-                                    } else {
-                                        alert('This quest cannot be done in your current chapter');
+                                    questWarningYes.addEventListener('click', function() {
+                                        if ((interactionData.questName === "Ghost Party" && currentDay === "twodaysleft") || (interactionData.questName === "Pessi's Thing" && sweetheart === true) || (interactionData.questName === "Berly's Lost Ball" && (heights === true && currentDay !== "twodaysleft"))) {
+                                            localStorage.setItem('quest', interactionData.questName);
+                                            localStorage.setItem('questStep', 0);
+                                            localStorage.setItem('stopQuestButton', 'open');
+
+                                            location.reload();
+                                        } else {
+                                            alert('This quest cannot be done in your current chapter');
+                                            questWarning.classList.add('hidden');
+                                        }
+                                    });
+
+                                    questWarningNo.addEventListener('click', function() {
                                         questWarning.classList.add('hidden');
-                                    }
-                                });
-
-                                questWarningNo.addEventListener('click', function() {
-                                    questWarning.classList.add('hidden');
-                                });
-                            })
+                                    });
+                                })
+                            }
                         }
                     }
 
