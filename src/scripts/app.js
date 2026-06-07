@@ -87,6 +87,14 @@ var questWarningYes = document.querySelector('.sq__yesQuest');
 var questWarningNo = document.querySelector('.sq__noQuest');
 var questWarningText = document.querySelector('.sq__warningtext');
 
+var wrongDayWarning = document.querySelector('.sq__wrongDay');
+var wrongDayWarningOk = document.querySelector('.sq__wrongDayButton');
+var wrongDayWarningText = document.querySelector('.sq__wrongDaytext');
+
+var questProgressBox = document.querySelector('.sq__questProgress');
+var questProgressOk = document.querySelector('.sq__questProgressButton');
+var questProgressText = document.querySelector('.sq__questProgresstext');
+
 settingsButton.addEventListener('click', function() {
     settingsDiv.classList.add('sq__settings--appear');
     localStorage.setItem('settings', 'open');
@@ -427,7 +435,19 @@ fetch('./assets/data/data.json')
 
                     location.reload();
                 } else {
-                    alert('This quest cannot be done in your current chapter');
+                    if (list.textContent === "Ghost Party") {
+                        wrongDayWarningText.textContent = "This quest is not available in your current progression. This quest can only be done in the 'Two Days Left' chapter";
+                    } else if (list.textContent === "Pessi's Thing") {
+                        wrongDayWarningText.textContent = "This quest is not available in your current progression. This quest can only be done after beating Sweetheart";
+                    } else if (list.textContent === "Berly's Lost Ball") {
+                       wrongDayWarningText.textContent = "This quest is not available in your current progression. This quest can only be done after beating your fear of heights and before the 'Two Days Left' chapter"; 
+                    }
+
+                    wrongDayWarning.classList.remove('hidden');
+
+                    wrongDayWarningOk.addEventListener('click', function() {
+                        wrongDayWarning.classList.add('hidden');
+                    })
                 }
             })
         })
@@ -600,8 +620,21 @@ fetch('./assets/data/data.json')
 
                                             location.reload();
                                         } else {
-                                            alert('This quest cannot be done in your current chapter');
+
+                                            if (interactionData.questName === "Ghost Party") {
+                                                wrongDayWarningText.textContent = "This quest is not available in your current progression. This quest can only be done in the 'Two Days Left' chapter";
+                                            } else if (interactionData.questName === "Pessi's Thing") {
+                                                wrongDayWarningText.textContent = "This quest is not available in your current progression. This quest can only be done after beating Sweetheart";
+                                            } else if (interactionData.questName === "Berly's Lost Ball") {
+                                                wrongDayWarningText.textContent = "This quest is not available in your current progression. This quest can only be done after beating your fear of heights and before the 'Two Days Left' chapter"; 
+                                            }
+                                            
                                             questWarning.classList.add('hidden');
+                                            wrongDayWarning.classList.remove('hidden');
+
+                                            wrongDayWarningOk.addEventListener('click', function() {
+                                                wrongDayWarning.classList.add('hidden');
+                                            })
                                         }
                                     });
 
@@ -633,15 +666,24 @@ fetch('./assets/data/data.json')
                                     activeQuestStep++;
 
                                     if (activeQuestStep >= totalSteps) {
-                                        alert("Félicitations, la quête " + activeQuest + " est terminée !");
+                                        questProgressText.textContent = "Congratulations! The " + activeQuest + "quest is done!";
+                                        questProgressBox.classList.remove('hidden');
+
                                         localStorage.removeItem('quest');
                                         localStorage.removeItem('questStep');
                                         localStorage.setItem('stopQuestButton', 'closed')
                                         activeQuest = null;
 
-                                        location.reload();
+                                        questProgressOk.addEventListener('click', function() {
+                                            location.reload();
+                                        })
                                     } else {
-                                        alert("Étape terminée! Suivante");
+                                        questProgressText.textContent = "Step done! Onto the next one.";
+                                        questProgressBox.classList.remove('hidden');
+                                        questProgressOk.addEventListener('click', function() {
+                                            questProgressBox.classList.add('hidden');
+                                        })
+
                                         localStorage.setItem('questStep', activeQuestStep);
                                     }
 

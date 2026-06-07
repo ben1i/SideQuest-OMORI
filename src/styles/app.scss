@@ -112,7 +112,7 @@ main {
     }
 }
 
-.sq__opensettings, .sq__openquests, .sq__stopquest, .sq__creditsButton {
+.sq__stopquest, .sq__creditsButton {
     font-size: $step-2;
     
     position: absolute;
@@ -121,14 +121,23 @@ main {
     cursor: pointer;
 }
 
-.sq__opensettings {
-    left: 0;
-    top: 10%;
-}
+.sq__buttons {
+    position: absolute;
 
-.sq__openquests {
-    top: 40%;
+    top: 10%;
     left: 0;
+
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+
+    button {
+        font-size: $step-2;
+
+        cursor: pointer;
+    }
 }
 
 .sq__stopquest {
@@ -256,9 +265,9 @@ p {
 }
 
 .sq__quests {
-    top: 40%;
+    top: 10%;
 
-    width: 10%;
+    width: 15%;
 }
 
 .sq__settings--appear, .sq__quests--appear {
@@ -335,6 +344,65 @@ p {
     }
 }
 
+.sq__wrongDay {
+    width: 40%;
+    height: 40%;
+
+    position: absolute;
+
+    z-index: 40;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sq__wrongDaytext {
+        font-size: $step-1;
+    }
+
+    .sq__wrongDayButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .sq__wrongDayButton {
+            font-size: $step-1;
+            width: 30%;
+        }
+    }
+}
+
+.sq__questProgress {
+    width: 40%;
+    height: auto;
+
+    position: absolute;
+
+    z-index: 40;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sq__questProgresstext {
+        font-size: $step-1;
+        text-align: center;
+    }
+
+    .sq__questProgressButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .sq__questProgressButton {
+            font-size: $step-1;
+            width: 30%;
+        }
+    }
+}
+
 .omori__border {
     background-color: black;
     padding: 20px;
@@ -364,6 +432,18 @@ p {
     }
 }
 
+.omori__border--white {
+    background-color: white;
+    outline-color: black;
+    color: black;
+
+    &:hover {
+        background-color: black;
+        outline-color: white;
+        color: white;
+    }
+}
+
 .sq__label input[type="radio"] {
   display: none;
 }
@@ -373,15 +453,6 @@ p {
 }
 
 @media(max-width: 1400px) {
-    .sq__opensettings {
-        left: 10%;
-        top: 0;
-    }
-
-    .sq__openquests {
-        top: 0;
-        left: 70%;
-    }
 
     .sq__settings {
         top: -100%;
@@ -432,5 +503,14 @@ p {
         aspect-ratio: unset;
 
         border: none;
+    }
+}
+
+@media(max-height: 900px) {
+    .sq__map, #map {
+        height: 100%;
+        max-height: 100%;
+
+        aspect-ratio: unset;
     }
 }
