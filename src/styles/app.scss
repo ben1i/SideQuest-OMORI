@@ -22,6 +22,10 @@ body {
     color: white;
 }
 
+body, body * {
+    box-sizing: border-box;
+}
+
 html, body, main {
     height: 100vh;
     width: 100vw;
@@ -52,6 +56,7 @@ main {
     z-index: 60;
 
     width: 70%;
+    max-height: 100vh;
 
     a {
         color: red;
@@ -112,7 +117,7 @@ main {
     }
 }
 
-.sq__stopquest, .sq__creditsButton {
+.sq__stopquest {
     font-size: $step-2;
     
     position: absolute;
@@ -143,11 +148,6 @@ main {
 .sq__stopquest {
     right: 0;
     top: 10%;
-}
-
-.sq__creditsButton {
-    left: 0;
-    bottom: 10%;
 }
 
 .sq__map, #map {
@@ -453,27 +453,18 @@ p {
 }
 
 @media(max-width: 1400px) {
-
-    .sq__settings {
-        top: -100%;
-        left: 10%;
-    }
-
-    .sq__quests {
-        top: -100%;
-        left: 70%;
-    }
-
-    .sq__settings--appear, .sq__quests--appear {
-        top: 0;
-    }
-
     .sq__spawn {
         overflow-y: auto;
     }
 
     .sq__map, #map {
         width: 80%;
+    }
+
+    .sq__splashtext {
+        width: 100%;
+
+        font-size: $step-1;
     }
 }
 
@@ -503,6 +494,109 @@ p {
         aspect-ratio: unset;
 
         border: none;
+    }
+
+    .sq__credits {
+        width: 100%;
+
+        overflow-y: scroll;
+    }
+
+    .sq__home {
+        width: 100%;
+
+        p {
+            font-size: $step-0;
+        }
+
+        .sq__pararagraphsmall {
+            margin-top: 31px;
+        }
+    }
+
+    .sq__logo {
+        height: 50px;
+    }
+
+    .sq__ok {
+        margin-top: 31px;
+    }
+
+    .sq__spawn {
+        width: 100%;
+
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    h1 {
+        font-size: $step-2;
+    }
+
+    h2 {
+        font-size: $step-1;
+        margin-top: 15px;
+    }
+
+    .sq__radios {
+        margin-top: 31px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: space-evenly;
+
+        gap: 31px;
+
+        span {
+            font-size: $step-1;
+        }
+    }
+
+    .sq__settings, .sq__quests {
+        left: -100%;
+        top: 10%;
+    }
+
+    .sq__quests {
+        width: 40%;
+    }
+
+    .sq__settings--appear, .sq__quests--appear {
+        left: 0;
+    }
+
+    .sq__warning {
+        width: 100%;
+        height: auto;
+        
+        .sq__warningtext {
+            font-size: $step-0;
+        }
+    }
+
+    .sq__wrongDay {
+        width: 100%;
+        height: auto;
+
+        .sq__wrongDaytext {
+            font-size: $step-0;
+        }
+    }
+
+    .sq__questProgress {
+        width: 100%;
+
+        .sq__questProgresstext {
+            font-size: $step-0;
+        }
+    }
+
+    .sq__splashtext {
+       font-size: $step-0;
     }
 }
 

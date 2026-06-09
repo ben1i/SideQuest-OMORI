@@ -244,6 +244,7 @@ fetch('./assets/data/data.json')
 
             settingsButton.classList.add('hidden');
             questButton.classList.add('hidden');
+            creditsButton.classList.add('hidden');
 
             const dayRadios = document.querySelectorAll('.sq__dayradio');
             dayRadios.forEach(radio => {
